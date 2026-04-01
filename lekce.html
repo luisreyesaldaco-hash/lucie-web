@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lekce – Lucie Linková</title>
+  <meta name="description" content="Individuální nebo skupinové lekce hypopresivní metody s Lucií Linkovou v Praze 3.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* ─── PAGE LAYOUT ─── */
+    .lekce-page {
+      min-height: 100vh;
+      padding-top: 90px;
+      background: var(--cream);
+    }
+
+    .lekce-header {
+      text-align: center;
+      padding: 3.5rem 2rem 2rem;
+    }
+
+    .lekce-header .s-tag {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .lekce-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .lekce-header p {
+      color: var(--mid);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── COMPARE CARDS ─── */
+    .compare-section {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .compare-card {
+      background: var(--warm);
+      border: 1px solid rgba(184,98,58,0.15);
+      border-radius: 16px;
+      padding: 2rem 1.75rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .compare-card:hover {
+      box-shadow: 0 8px 32px rgba(184,98,58,0.1);
+    }
+
+    .compare-card.highlighted {
+      border-color: var(--terra);
+      position: relative;
+    }
+
+    .compare-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--terra);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .compare-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .compare-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .compare-price {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--terra);
+      margin-bottom: 1.25rem;
+    }
+
+    .compare-price span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .compare-pros {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .compare-pros li {
+      font-size: 0.92rem;
+      color: var(--mid);
+      padding-left: 1.4rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .compare-pros li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+      font-weight: 500;
+    }
+
+    .compare-cons {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(184,98,58,0.1);
+    }
+
+    .compare-cons li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding-left: 1.4rem;
+      position: relative;
+    }
+
+    .compare-cons li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+    }
+
+    .compare-choose {
+      display: block;
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      background: transparent;
+      border: 1.5px solid var(--terra);
+      border-radius: 10px;
+      color: var(--terra);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+
+    .compare-card.highlighted .compare-choose {
+      background: var(--terra);
+      color: white;
+    }
+
+    .compare-choose:hover {
+      background: var(--terra);
+      color: white;
+    }
+
+    /* ─── CHATBOT ─── */
+    .chat-section {
+      max-width: 560px;
+      margin: 0 auto 5rem;
+      padding: 0 1.5rem;
+    }
+
+    .chat-box {
+      background: var(--warm);
+      border: 1px solid rgba(184,98,58,0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(184,98,58,0.08);
+    }
+
+    .chat-header-bar {
+      background: var(--terra);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .chat-header-info {
+      color: white;
+    }
+
+    .chat-header-info strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .chat-header-info span {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    .chat-messages {
+      padding: 1.4rem;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .msg-lucie {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-end;
+    }
+
+    .msg-lucie-avatar {
+      width: 28px;
+      height: 28px;
+      background: var(--terra-pale);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .bubble-lucie {
+      background: var(--terra-pale);
+      color: var(--dark);
+      padding: 0.75rem 1rem;
+      border-radius: 16px 16px 16px 4px;
+      font-size: 0.93rem;
+      line-height: 1.55;
+      max-width: 85%;
+    }
+
+    .bubble-user {
+      background: var(--terra);
+      color: white;
+      padding: 0.7rem 1rem;
+      border-radius: 16px 16px 4px 16px;
+      font-size: 0.93rem;
+      line-height: 1.55;
+      max-width: 75%;
+      align-self: flex-end;
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      padding: 0.5rem 0;
+    }
+
+    .typing-indicator span {
+      width: 6px;
+      height: 6px;
+      background: var(--terra);
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: bounce 1.2s infinite;
+    }
+
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    /* Choice buttons */
+    .choice-buttons {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+
+    .choice-btn {
+      padding: 0.5rem 1rem;
+      border: 1.5px solid var(--terra);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--terra);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .choice-btn:hover, .choice-btn.selected {
+      background: var(--terra);
+      color: white;
+    }
+
+    /* Input area */
+    .chat-input-area {
+      padding: 1rem 1.4rem 1.4rem;
+      border-top: 1px solid rgba(184,98,58,0.1);
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .chat-input {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      border: 1.5px solid rgba(184,98,58,0.2);
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      background: white;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .chat-input:focus { border-color: var(--terra); }
+    .chat-input::placeholder { color: var(--muted); }
+
+    .chat-send {
+      width: 42px;
+      height: 42px;
+      background: var(--terra);
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .chat-send:hover { background: var(--terra-light); }
+    .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .chat-input-area.hidden {
+      display: none;
+    }
+
+    /* Success state */
+    .chat-success {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      display: none;
+    }
+
+    .chat-success .success-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .chat-success h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .chat-success p {
+      color: var(--mid);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 640px) {
+      .compare-section {
+        grid-template-columns: 1fr;
+      }
+      .compare-card.highlighted {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle">
+  <a href="/lekce.html" class="lang-btn active">CZ</a>
+  <a href="/en/index.html" class="lang-btn">EN</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/index.html" class="nav-logo">
+    Lucie Linková
+    <span>Hypopresivní metoda · Praha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/index.html#problems">Vaše potíže</a></li>
+    <li><a href="/index.html#about">O metodě</a></li>
+    <li><a href="/index.html#services">Nabídka</a></li>
+    <li><a href="/lekce.html" class="nav-book">Rezervovat</a></li>
+  </ul>
+</nav>
+
+<div class="lekce-page">
+
+  <!-- HEADER -->
+  <div class="lekce-header">
+    <div class="s-tag">Vyberte si formu spolupráce</div>
+    <h1>Individuální nebo <em>skupinová</em> lekce?</h1>
+    <p>Obě cesty vedou ke stejnému cíli — zdravějšímu středu těla. Záleží jen na tom, co vám víc sedí.</p>
+  </div>
+
+  <!-- COMPARE -->
+  <div class="compare-section">
+    <div class="compare-card">
+      <div class="compare-icon">🌿</div>
+      <h2>Skupinová lekce</h2>
+      <div class="compare-price">od 350 Kč <span>/ 60 min · max 8 osob</span></div>
+      <ul class="compare-pros">
+        <li>Příjemná atmosféra ve skupině</li>
+        <li>Motivace od ostatních klientek</li>
+        <li>Ideální pro začátečnice i pokročilé</li>
+        <li>Praha 3 – Hit Fitness Flóra</li>
+      </ul>
+      <ul class="compare-cons">
+        <li>Pevný rozvrh termínů</li>
+        <li>Méně prostoru pro individuální korekce</li>
+      </ul>
+      <button class="compare-choose" onclick="zvolit('skupinova')">Chci skupinovou lekci →</button>
+    </div>
+
+    <div class="compare-card highlighted">
+      <div class="compare-badge">Nejoblíbenější</div>
+      <div class="compare-icon">✨</div>
+      <h2>Individuální lekce</h2>
+      <div class="compare-price">od 900 Kč <span>/ 60 min · jen pro vás</span></div>
+      <ul class="compare-pros">
+        <li>Přizpůsobeno přesně vašim potřebám</li>
+        <li>Maximální pozornost a korekce techniky</li>
+        <li>Nejrychlejší cesta k výsledkům</li>
+        <li>Praha 3 nebo online video konzultace</li>
+      </ul>
+      <ul class="compare-cons">
+        <li>Vyšší cena oproti skupině</li>
+      </ul>
+      <button class="compare-choose" onclick="zvolit('individualni')">Chci individuální lekci →</button>
+    </div>
+  </div>
+
+  <!-- CHATBOT -->
+  <div class="chat-section" id="chat-section">
+    <div class="chat-box">
+      <div class="chat-header-bar">
+        <div class="chat-avatar">🌿</div>
+        <div class="chat-header-info">
+          <strong>Lucie Linková</strong>
+          <span>Obvykle odpoví do 24 hodin</span>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chat-messages"></div>
+
+      <div class="chat-success" id="chat-success">
+        <div class="success-icon">🌿</div>
+        <h3>Skvělé, zpráva odeslána!</h3>
+        <p>Lucie vám napíše co nejdříve s dostupnými termíny.<br>Těšte se na první lekci!</p>
+      </div>
+
+      <div class="chat-input-area" id="chat-input-area">
+        <input
+          type="text"
+          class="chat-input"
+          id="chat-input"
+          placeholder="Napište svou odpověď…"
+          autocomplete="off"
+          onkeydown="if(event.key==='Enter') odeslat()"
+        />
+        <button class="chat-send" id="chat-send" onclick="odeslat()">→</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="/index.html" class="footer-logo">
+        Lucie Linková
+        <span>Hypopresivní metoda</span>
+      </a>
+      <p class="footer-desc">
+        Hypopresivní metoda a vědomý pohyb pro stabilitu, lehkost a zdravý střed těla. Praha 3.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigace</h5>
+      <ul>
+        <li><a href="/index.html#problems">Vaše potíže</a></li>
+        <li><a href="/index.html#about">O metodě</a></li>
+        <li><a href="/index.html#services">Nabídka lekcí</a></li>
+        <li><a href="/lekce.html">Rezervace</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h5>Kontakt</h5>
+      <p>
+        Hit Fitness Flóra<br>
+        Chrudimská 2b, Praha 3<br>
+        +420 792 314 472<br>
+        info@stredtela.cz
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucie Linková · stredtela.cz</p>
+    <p>Vytvořeno s ❤️ v Praze</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // ─── FORMSPREE ENDPOINT ───────────────────────────────────────
+  // Cuando Lucie tenga su cuenta, reemplaza esta línea con el endpoint real:
+  // const FORMSPREE_URL = 'https://formspree.io/f/XXXXXXXX';
+  const FORMSPREE_URL = 'https://formspree.io/f/XXXXXXXX';
+
+  // ─── STATE ────────────────────────────────────────────────────
+  const datos = { nombre: '', tipo: '', email: '', mensaje: '' };
+  let paso = 0;
+  let bloqueado = false;
+
+  const pasos = [
+    {
+      pregunta: 'Ahoj! Jsem tu za Lucii 🌿 Jak se jmenuješ?',
+      campo: 'nombre',
+      tipo: 'texto',
+      placeholder: 'Vaše jméno…'
+    },
+    {
+      pregunta: null, // se construye dinámicamente con el nombre
+      campo: 'tipo',
+      tipo: 'opciones',
+      opciones: [
+        { label: 'Individuální lekci', value: 'individualni' },
+        { label: 'Skupinovou lekci', value: 'skupinova' }
+      ]
+    },
+    {
+      pregunta: null, // se construye dinámicamente con la elección
+      campo: 'email',
+      tipo: 'texto',
+      placeholder: 'váš@email.cz'
+    },
+    {
+      pregunta: 'Chcete Lucii ještě něco sdělit? (Nemusíte, ale pokud máte speciální potřeby nebo dotazy, napište je sem.)',
+      campo: 'mensaje',
+      tipo: 'texto-opcional',
+      placeholder: 'Nepovinné…'
+    }
+  ];
+
+  // ─── INIT ─────────────────────────────────────────────────────
+  window.addEventListener('DOMContentLoaded', () => {
+    // Si viene de los botones de comparación, iniciamos con esa elección
+    const params = new URLSearchParams(window.location.search);
+    const tipo = params.get('tipo');
+    if (tipo) {
+      datos.tipo = tipo;
+    }
+    mostrarPaso(0);
+  });
+
+  // ─── ELEGIR DESDE LAS TARJETAS ────────────────────────────────
+  function zvolit(tipo) {
+    datos.tipo = tipo;
+    document.getElementById('chat-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    mostrarPaso(0);
+  }
+
+  // ─── MOSTRAR PASO ─────────────────────────────────────────────
+  function mostrarPaso(n) {
+    paso = n;
+    const p = pasos[n];
+
+    let pregunta = p.pregunta;
+
+    if (n === 1) {
+      pregunta = `Hezky, ${datos.nombre}! O jakou lekci máte zájem?`;
+      if (datos.tipo) {
+        // Ya viene elegido desde las tarjetas — saltamos este paso
+        const eleccion = datos.tipo === 'individualni' ? 'Individuální lekci' : 'Skupinovou lekci';
+        agregarBurbuja('lucie', pregunta);
+        setTimeout(() => {
+          agregarBurbuja('user', eleccion);
+          setTimeout(() => mostrarPaso(2), 400);
+        }, 600);
+        return;
+      }
+    }
+
+    if (n === 2) {
+      const eleccion = datos.tipo === 'individualni' ? 'individuální lekci' : 'skupinovou lekci';
+      pregunta = `Skvělá volba! 🙌 Na jakou emailovou adresu vám Lucie může napsat s dostupnými termíny pro ${eleccion}?`;
+    }
+
+    mostrarTyping(() => {
+      agregarBurbuja('lucie', pregunta);
+
+      if (p.tipo === 'opciones') {
+        setTimeout(() => mostrarOpciones(p.opciones), 300);
+      } else {
+        document.getElementById('chat-input').placeholder = p.placeholder || 'Napište svou odpověď…';
+        document.getElementById('chat-input').focus();
+      }
+    });
+  }
+
+  // ─── OPCIONES ─────────────────────────────────────────────────
+  function mostrarOpciones(opciones) {
+    const msgs = document.getElementById('chat-messages');
+    const div = document.createElement('div');
+    div.className = 'choice-buttons';
+    div.id = 'choice-buttons';
+    opciones.forEach(op => {
+      const btn = document.createElement('button');
+      btn.className = 'choice-btn';
+      btn.textContent = op.label;
+      btn.onclick = () => {
+        datos.tipo = op.value;
+        div.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
+        btn.classList.add('selected');
+        agregarBurbuja('user', op.label);
+        setTimeout(() => mostrarPaso(paso + 1), 400);
+      };
+      div.appendChild(btn);
+    });
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  // ─── ENVIAR RESPUESTA DE TEXTO ────────────────────────────────
+  function odeslat() {
+    if (bloqueado) return;
+    const input = document.getElementById('chat-input');
+    const valor = input.value.trim();
+
+    const p = pasos[paso];
+
+    // Campo opcional — permite continuar vacío
+    if (!valor && p.tipo !== 'texto-opcional') return;
+
+    input.value = '';
+    datos[p.campo] = valor;
+
+    if (valor) agregarBurbuja('user', valor);
+
+    if (paso < pasos.length - 1) {
+      setTimeout(() => mostrarPaso(paso + 1), 400);
+    } else {
+      enviarFormulario();
+    }
+  }
+
+  // ─── ENVIAR A FORMSPREE ───────────────────────────────────────
+  async function enviarFormulario() {
+    bloqueado = true;
+    document.getElementById('chat-input-area').classList.add('hidden');
+
+    const tipoLabel = datos.tipo === 'individualni' ? 'Individuální lekce' : 'Skupinová lekce';
+
+    mostrarTyping(() => {
+      agregarBurbuja('lucie', `Děkuji, ${datos.nombre}! Posílám vaši zprávu Lucii… 🌿`);
+
+      fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          jmeno: datos.nombre,
+          typ_lekce: tipoLabel,
+          email: datos.email,
+          zprava: datos.mensaje || '(bez zprávy)',
+          _subject: `Nová rezervace – ${tipoLabel} – ${datos.nombre}`
+        })
+      })
+      .then(r => r.json())
+      .then(() => {
+        setTimeout(() => {
+          document.getElementById('chat-messages').style.display = 'none';
+          document.getElementById('chat-success').style.display = 'block';
+        }, 800);
+      })
+      .catch(() => {
+        agregarBurbuja('lucie', 'Omlouvám se, něco se pokazilo. Zkuste nás kontaktovat přímo na info@stredtela.cz nebo na telefonu +420 792 314 472.');
+      });
+    });
+  }
+
+  // ─── HELPERS ──────────────────────────────────────────────────
+  function agregarBurbuja(quien, texto) {
+    const msgs = document.getElementById('chat-messages');
+    const div = document.createElement('div');
+
+    if (quien === 'lucie') {
+      div.className = 'msg-lucie';
+      div.innerHTML = `
+        <div class="msg-lucie-avatar">🌿</div>
+        <div class="bubble-lucie">${texto}</div>
+      `;
+    } else {
+      div.className = 'bubble-user';
+      div.textContent = texto;
+    }
+
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function mostrarTyping(callback) {
+    const msgs = document.getElementById('chat-messages');
+    const typing = document.createElement('div');
+    typing.className = 'msg-lucie';
+    typing.id = 'typing-indicator';
+    typing.innerHTML = `
+      <div class="msg-lucie-avatar">🌿</div>
+      <div class="bubble-lucie">
+        <div class="typing-indicator">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    `;
+    msgs.appendChild(typing);
+    msgs.scrollTop = msgs.scrollHeight;
+
+    setTimeout(() => {
+      const el = document.getElementById('typing-indicator');
+      if (el) el.remove();
+      callback();
+    }, 900);
+  }
+</script>
+</body>
+</html>
