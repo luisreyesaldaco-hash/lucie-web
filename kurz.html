@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurz mírně pokročilí – Lucie Linková</title>
+  <meta name="description" content="Hypopresivní kurz pro mírně pokročilé. 10 lekcí, Vinohrady – MotherGood studio. 4 000 Kč za kurz.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .kurz-page { padding-top: 72px; background: var(--cream); }
+
+    /* ─── HERO ─── */
+    .kurz-hero {
+      background: linear-gradient(160deg, var(--terra-pale) 0%, var(--sage-pale) 100%);
+      padding: 5rem 5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kurz-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(184,98,58,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 80%, rgba(122,158,130,0.12) 0%, transparent 50%);
+    }
+
+    .kurz-hero-inner {
+      position: relative;
+      max-width: 700px;
+    }
+
+    .kurz-hero .s-tag { margin-bottom: 1.5rem; }
+
+    .kurz-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .kurz-hero h1 em { font-style: italic; color: var(--terra); }
+
+    .kurz-hero-sub {
+      font-size: 1.05rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 560px;
+    }
+
+    .kurz-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .kurz-meta-pill {
+      background: white;
+      border: 1px solid rgba(184,98,58,0.2);
+      border-radius: 2px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.8rem;
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    .kurz-meta-pill strong {
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    /* ─── CONTENT SECTIONS ─── */
+    .kurz-section {
+      padding: 4rem 5rem;
+    }
+
+    .kurz-section-alt {
+      background: var(--warm);
+    }
+
+    .kurz-section-dark {
+      background: var(--dark);
+    }
+
+    .kurz-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .kurz-section h2 em { font-style: italic; color: var(--terra); }
+
+    .kurz-section-dark h2 { color: var(--warm); }
+    .kurz-section-dark h2 em { color: var(--terra-light); }
+
+    /* ─── DESCRIPTION ─── */
+    .kurz-desc-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .kurz-desc-text p {
+      font-size: 0.95rem;
+      line-height: 1.95;
+      color: var(--mid);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+
+    .kurz-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .kurz-highlight-card {
+      background: white;
+      border: 1px solid rgba(184,98,58,0.12);
+      border-radius: 2px;
+      padding: 1.4rem 1.5rem;
+      border-left: 3px solid var(--terra);
+    }
+
+    .kurz-highlight-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .kurz-highlight-card p {
+      font-size: 0.82rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ─── LESSON STRUCTURE ─── */
+    .lesson-parts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .lesson-part {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      padding: 2.5rem 2rem;
+    }
+
+    .lesson-part-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: rgba(184,98,58,0.2);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .lesson-part-duration {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra-light);
+      margin-bottom: 1rem;
+    }
+
+    .lesson-part h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--warm);
+      margin-bottom: 0.75rem;
+    }
+
+    .lesson-part p {
+      font-size: 0.84rem;
+      color: rgba(253,250,246,0.5);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .lesson-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .lesson-items li {
+      font-size: 0.82rem;
+      color: rgba(253,250,246,0.6);
+      font-weight: 300;
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .lesson-items li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--terra-light);
+      font-size: 0.55rem;
+      top: 0.3rem;
+    }
+
+    /* ─── BENEFITS ─── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .benefit-card {
+      background: var(--cream);
+      border: 1px solid rgba(184,98,58,0.1);
+      border-radius: 2px;
+      padding: 2rem 1.6rem;
+      transition: all 0.3s;
+    }
+
+    .kurz-section-alt .benefit-card { background: white; }
+
+    .benefit-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(37,28,20,0.07);
+      border-color: var(--terra);
+    }
+
+    .benefit-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .benefit-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.83rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ─── SCHEDULE TABLE ─── */
+    .kurz-schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ─── PRACTICAL INFO ─── */
+    .practical-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 1rem;
+    }
+
+    .practical-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+
+    .practical-block ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .practical-block li {
+      font-size: 0.87rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.65;
+      padding-left: 1.3rem;
+      position: relative;
+    }
+
+    .practical-block li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--terra);
+      font-size: 0.55rem;
+      top: 0.35rem;
+    }
+
+    .practical-block p {
+      font-size: 0.87rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ─── PAYMENT & REGISTRATION ─── */
+    .payment-register-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .register-block {
+      background: var(--terra);
+      border-radius: 2px;
+      padding: 2.8rem 2.2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .register-block .qr-label {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .register-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 500;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .register-price-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .register-block .btn-register {
+      display: inline-block;
+      background: white;
+      color: var(--terra);
+      padding: 0.9rem 2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 1px;
+      transition: all 0.3s;
+    }
+
+    .register-block .btn-register:hover {
+      background: var(--dark);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .register-block .btn-note {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .kurz-hero { padding: 4rem 2rem 3rem; }
+      .kurz-section { padding: 3.5rem 2rem; }
+      .kurz-desc-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .lesson-parts { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .kurz-schedule-grid { grid-template-columns: repeat(2, 1fr); }
+      .practical-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .payment-register-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 580px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .kurz-schedule-grid { grid-template-columns: 1fr; }
+      .kurz-hero-meta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle">
+  <a href="/kurz.html" class="lang-btn active">CZ</a>
+  <a href="/en/kurz.html" class="lang-btn">EN</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/index.html" class="nav-logo">
+    Lucie Linková
+    <span>Hypopresivní metoda · Praha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/index.html#problems">Vaše potíže</a></li>
+    <li><a href="/index.html#about">O metodě</a></li>
+    <li class="has-dropdown">
+      <a href="/index.html#services">Nabídka</a>
+      <ul class="nav-dropdown">
+        <li><a href="/lekce.html">Individuální lekce</a></li>
+        <li><a href="/workshop.html">Workshopy</a></li>
+        <li><a href="/kurz.html">Kurzy</a></li>
+      </ul>
+    </li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/lekce.html" class="nav-book">Rezervovat</a></li>
+  </ul>
+</nav>
+
+<div class="kurz-page">
+
+  <!-- HERO -->
+  <div class="kurz-hero">
+    <div class="kurz-hero-inner">
+      <div class="s-tag">Nový kurz · Jaro 2026</div>
+      <h1>Kurz hypopresivní metody<br><em>Mírně pokročilí</em></h1>
+      <p class="kurz-hero-sub">
+        Pro ty, kdo absolvovaly začátečnický kurz nebo mají základní znalost metody
+        a chtějí jít hlouběji. Dech, pohyb a nervový systém jako jeden celek.
+      </p>
+      <div class="kurz-hero-meta">
+        <div class="kurz-meta-pill"><strong>10 lekcí</strong> · 55 minut</div>
+        <div class="kurz-meta-pill"><strong>4 000 Kč</strong> za kurz</div>
+        <div class="kurz-meta-pill"><strong>Vinohrady</strong> · MotherGood studio</div>
+        <div class="kurz-meta-pill">Začínáme <strong>14. dubna 2026</strong></div>
+        <div class="kurz-meta-pill">Úroveň <strong>mírně pokročilí</strong></div>
+      </div>
+      <a href="#registrace" class="btn-main">Přihlásit se →</a>
+    </div>
+  </div>
+
+  <!-- O KURZU -->
+  <div class="kurz-section">
+    <div class="kurz-desc-grid">
+      <div class="kurz-desc-text">
+        <div class="s-tag">O kurzu</div>
+        <h2>Co vás na kurzu <em>čeká</em></h2>
+        <p>
+          Tento kurz navazuje na základní znalost hypopresivní metody. Zaměřujeme se na prohlubování
+          dechových vzorců, přesnější práci s polohou těla a postupné zvyšování náročnosti pozic.
+        </p>
+        <p>
+          V průběhu 10 lekcí procházíme celým systémem — od přípravy těla přes aktivaci hlubokého
+          stabilizačního systému až po vědomé propojení dechu, pohybu a nervové soustavy.
+        </p>
+        <p>
+          Každá lekce je nahrávána. Pokud nemůžete přijít, dostanete záznam a nic vám
+          neunikne. Zameškané lekce lze nahradit v jiném termínu kurzu.
+        </p>
+      </div>
+      <div class="kurz-highlights">
+        <div class="kurz-highlight-card">
+          <h4>Pro koho je kurz určen?</h4>
+          <p>Pro ty, kdo mají základní znalost hypopresivní metody — absolvovaly začátečnický kurz nebo individuální lekce.</p>
+        </div>
+        <div class="kurz-highlight-card">
+          <h4>Kde a kdy?</h4>
+          <p>MotherGood studio, Sudoměřská 1243/25, Vinohrady. 5 termínů k výběru — úterý, středa nebo čtvrtek.</p>
+        </div>
+        <div class="kurz-highlight-card">
+          <h4>Jak velká skupina?</h4>
+          <p>Malá skupina — maximálně 6–8 osob. Každá lekce je osobní a Lucie vám věnuje individuální pozornost.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STRUKTURA LEKCE -->
+  <div class="kurz-section kurz-section-dark">
+    <div class="s-tag">Jak vypadá lekce</div>
+    <h2>Struktura každé <em>lekce</em></h2>
+    <div class="lesson-parts">
+      <div class="lesson-part">
+        <div class="lesson-part-num">01</div>
+        <div class="lesson-part-duration">~15–20 minut · příprava</div>
+        <h3>Příprava těla</h3>
+        <p>Úvodní část lekce připravuje tělo na práci s hypopresivní technikou — uvolníme napětí a aktivujeme potřebné struktury.</p>
+        <ul class="lesson-items">
+          <li>Posilování a protažení</li>
+          <li>Balanční cvičení</li>
+          <li>Automassáž bránice</li>
+          <li>Vědomé dýchání a uklidnění nervového systému</li>
+        </ul>
+      </div>
+      <div class="lesson-part">
+        <div class="lesson-part-num">02</div>
+        <div class="lesson-part-duration">~35–40 minut · technika</div>
+        <h3>Hypopresivní technika</h3>
+        <p>Hlavní část lekce — práce s hypopresivní metodou v různých polohách s důrazem na přesnost a prohlubování techniky.</p>
+        <ul class="lesson-items">
+          <li>Dechové vzorce a apnoe</li>
+          <li>Správné postavení těla v pozicích</li>
+          <li>Vytvoření bráničního vakua</li>
+          <li>Postupně náročnější polohy a sekvence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CO KURZ PŘINÁŠÍ -->
+  <div class="kurz-section kurz-section-alt">
+    <div class="s-tag">Přínosy</div>
+    <h2>Co kurz <em>přinese</em></h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">🧘</span>
+        <h4>Lepší držení těla</h4>
+        <p>Vědomá práce s osou těla a hlubokým stabilizačním systémem se přenáší do každodenního pohybu.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">💪</span>
+        <h4>Silný střed bez přetížení</h4>
+        <p>Aktivace středu těla bez zvyšování nitrobřišního tlaku — metoda, která pracuje s fyziologií, ne proti ní.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🔥</span>
+        <h4>Méně bolesti zad</h4>
+        <p>Uvolnění napětí v bedrech a krční páteři díky správné funkci bránice a pánevního dna.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">💧</span>
+        <h4>Funkční pánevní dno</h4>
+        <p>Posílení a koordinace pánevního dna bez přetěžování — klíč ke zvládnutí inkontinence a prolapsu.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🌬️</span>
+        <h4>Vědomý dech</h4>
+        <p>Hluboké propojení s dechem jako nástrojem regulace těla i nervového systému.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🌿</span>
+        <h4>Celková vitalita</h4>
+        <p>Pravidelná praxe přináší větší lehkost, stabilitu a energii v každodenním životě.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMÍNY -->
+  <div class="kurz-section">
+    <div class="s-tag">Termíny</div>
+    <h2>Vyberte si <em>svůj termín</em></h2>
+    <p style="font-size:0.9rem;color:var(--mid);font-weight:300;margin-bottom:2rem;line-height:1.7;">
+      Všechny termíny probíhají souběžně — každá skupina absolvuje stejný kurz.
+      Vyberte ten, který vám nejlépe sedí do rozvrhu.<br>
+      <strong style="color:var(--dark);">Volno: 4.–8. května 2026</strong> — v tomto týdnu lekce neproběhnou.
+    </p>
+    <div class="kurz-schedule-grid">
+      <div class="schedule-card">
+        <div class="schedule-day">Úterý</div>
+        <div class="schedule-time">16:30–17:25</div>
+        <div class="schedule-duration">55 minut</div>
+        <div class="schedule-dates">
+          <strong>14. dubna – 23. června 2026</strong>
+          Každé úterý · 10 lekcí
+        </div>
+        <span class="schedule-level">Mírně pokročilí</span>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Úterý</div>
+        <div class="schedule-time">17:40–18:35</div>
+        <div class="schedule-duration">55 minut</div>
+        <div class="schedule-dates">
+          <strong>14. dubna – 23. června 2026</strong>
+          Každé úterý · 10 lekcí
+        </div>
+        <span class="schedule-level">Mírně pokročilí</span>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Středa</div>
+        <div class="schedule-time">17:00–17:55</div>
+        <div class="schedule-duration">55 minut</div>
+        <div class="schedule-dates">
+          <strong>15. dubna – 24. června 2026</strong>
+          Každou středu · 10 lekcí
+        </div>
+        <span class="schedule-level">Mírně pokročilí</span>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Čtvrtek</div>
+        <div class="schedule-time">7:00–7:55</div>
+        <div class="schedule-duration">55 minut</div>
+        <div class="schedule-dates">
+          <strong>16. dubna – 25. června 2026</strong>
+          Každý čtvrtek · 10 lekcí
+        </div>
+        <span class="schedule-level">Mírně pokročilí</span>
+      </div>
+      <div class="schedule-card">
+        <div class="schedule-day">Čtvrtek</div>
+        <div class="schedule-time">12:15–13:10</div>
+        <div class="schedule-duration">55 minut</div>
+        <div class="schedule-dates">
+          <strong>16. dubna – 25. června 2026</strong>
+          Každý čtvrtek · 10 lekcí
+        </div>
+        <span class="schedule-level">Mírně pokročilí</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PODMÍNKY -->
+  <div class="kurz-section kurz-section-alt">
+    <div class="s-tag">Podmínky účasti</div>
+    <h2>Praktické <em>informace</em></h2>
+    <div class="practical-grid">
+      <div class="practical-block">
+        <h3>Náhrada a omluvy</h3>
+        <ul>
+          <li>Omluvu je nutné zaslat nejpozději <strong>24 hodin předem</strong></li>
+          <li>Zameškané lekce lze nahradit v jiném běžícím termínu kurzu</li>
+          <li>Každá lekce je nahrávána — záznam obdržíte, pokud se nemůžete zúčastnit</li>
+          <li>Neomluvená absence propadá bez náhrady</li>
+        </ul>
+      </div>
+      <div class="practical-block">
+        <h3>Místo a vybavení</h3>
+        <ul>
+          <li>MotherGood studio, Sudoměřská 1243/25, Vinohrady</li>
+          <li>Vybavení je k dispozici v sále — podložky, overball, půlválce, expandery, masážní míče a malé činky</li>
+          <li>Lucie používá různé pomůcky pro trénink, mobilitu a cvičení dle potřeby</li>
+          <li>Pohodlné oblečení, ve kterém se volně pohybujete</li>
+          <li>Voda</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGISTRACE & PLATBA -->
+  <div class="kurz-section" id="registrace">
+    <div class="s-tag" style="justify-content:center;">Registrace a platba</div>
+    <h2 style="text-align:center;">Jak se <em>přihlásit</em></h2>
+    <p style="text-align:center;font-size:0.93rem;color:var(--mid);font-weight:300;max-width:480px;margin:0 auto 2.5rem;line-height:1.75;">
+      Vyplňte přihlašovací formulář a uhraďte kurz převodem. Přihlášení je závazné po přijetí platby.
+    </p>
+    <div class="payment-register-grid">
+
+      <div class="register-block">
+        <div class="register-price">4 000 Kč</div>
+        <div class="register-price-desc">za celý kurz · 10 lekcí · 55 minut každá</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3Os_RV5TBV-sCPVqWRVsadH0LUorm6JjNQcjfVml71RejhA/viewform" target="_blank" rel="noopener" class="btn-register">Vyplnit přihlášku →</a>
+        <span class="btn-note">Po odeslání formuláře vás Lucie kontaktuje s platebními údaji.</span>
+      </div>
+
+      <div class="qr-payment-block">
+        <div class="qr-label">Platba převodem · QR kód</div>
+        <div class="qr-placeholder">
+            <img src="/assets/qr-platba.jpg" alt="QR platba 4000 Kč">
+        </div>
+        <div class="qr-instructions">
+          <p>Naskenujte QR kódem ve své bankovní aplikaci.</p>
+          <p>Částka <strong>4 000 Kč</strong> se doplní automaticky.</p>
+          <p style="margin-top:0.6rem;font-size:0.78rem;">Nebo převodem: <strong>212121381/5500</strong><br>Zpráva pro příjemce: vaše celé jméno</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KONTAKT -->
+  <div class="kurz-section kurz-section-alt" style="text-align:center;">
+    <div class="s-tag" style="justify-content:center;">Dotazy</div>
+    <h2>Máte <em>otázky?</em></h2>
+    <p style="font-size:0.93rem;color:var(--mid);font-weight:300;max-width:420px;margin:0 auto 2rem;line-height:1.75;">
+      Napište nebo zavolejte — Lucie vám ráda odpoví.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:+420792314472" class="btn-main">+420 792 314 472</a>
+      <a href="mailto:lucielinkova@bodyease.cz" class="btn-ghost" style="font-size:0.9rem;">lucielinkova@bodyease.cz</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="/index.html" class="footer-logo">
+        Lucie Linková
+        <span>Hypopresivní metoda</span>
+      </a>
+      <p class="footer-desc">
+        Hypopresivní metoda a vědomý pohyb pro stabilitu, lehkost a zdravý střed těla. Vinohrady.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigace</h5>
+      <ul>
+        <li><a href="/index.html#problems">Vaše potíže</a></li>
+        <li><a href="/index.html#about">O metodě</a></li>
+        <li><a href="/index.html#services">Nabídka lekcí</a></li>
+        <li><a href="/index.html#kurzy">Kurzy</a></li>
+        <li><a href="/lekce.html">Rezervace</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h5>Kontakt</h5>
+      <p>
+        MotherGood studio<br>
+        Sudoměřská 1243/25, Vinohrady<br>
+        +420 792 314 472<br>
+        lucielinkova@bodyease.cz
+      </p>
+      <br>
+      <p>
+        <a href="https://instagram.com/bodyease_hypopressive" style="color:var(--terra-light)">Instagram</a> &nbsp;·&nbsp;
+        <a href="https://facebook.com" style="color:var(--terra-light)">Facebook</a> &nbsp;·&nbsp;
+        <a href="https://youtube.com/@bodyease_hypopressive" style="color:var(--terra-light)">YouTube</a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucie Linková · bodyease.cz</p>
+    <p>Vytvořeno s ❤️ v Praze</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

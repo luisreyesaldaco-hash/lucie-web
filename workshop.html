@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshopy – Lucie Linková | Hypopresivní metoda Praha</title>
+  <meta name="description" content="Workshopy Lucie Linkové – unikátní setkání kombinující hypopresivní metodu s dalšími přístupy. Praha 2026, limitovaná kapacita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .ws-page { padding-top: 72px; background: var(--cream); }
+
+    /* ─── HERO ─── */
+    .ws-hero {
+      background: linear-gradient(155deg, var(--dark) 0%, #3a2a1c 100%);
+      padding: 5.5rem 5rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ws-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(184,98,58,0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 80%, rgba(122,158,130,0.12) 0%, transparent 50%);
+    }
+
+    .ws-hero-inner { position: relative; max-width: 680px; }
+    .ws-hero .s-tag { color: var(--terra-light); border-color: rgba(184,98,58,0.3); }
+    .ws-hero .s-tag::before { background: var(--terra-light); }
+
+    .ws-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.12;
+      color: var(--warm);
+      margin: 1.25rem 0 1.4rem;
+    }
+
+    .ws-hero h1 em { font-style: italic; color: var(--terra-light); }
+
+    .ws-hero-sub {
+      font-size: 1.05rem;
+      color: rgba(253,250,246,0.65);
+      font-weight: 300;
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+    }
+
+    .ws-hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .ws-hero-pill {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 2px;
+      padding: 0.45rem 1rem;
+      font-size: 0.78rem;
+      color: rgba(253,250,246,0.6);
+      font-weight: 300;
+    }
+
+    .ws-hero-pill strong { color: rgba(253,250,246,0.9); font-weight: 500; }
+
+    /* ─── SECTIONS ─── */
+    .ws-section { padding: 4.5rem 5rem; }
+    .ws-section-alt { background: var(--warm); }
+    .ws-section-dark { background: var(--dark); }
+
+    .ws-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .ws-section h2 em { font-style: italic; color: var(--terra); }
+    .ws-section-dark h2 { color: var(--warm); }
+    .ws-section-dark h2 em { color: var(--terra-light); }
+
+    /* ─── PROJECT CARDS (NADCHÁZEJÍCÍ) ─── */
+    .ws-projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ws-project {
+      background: white;
+      border: 1px solid rgba(184,98,58,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .ws-project:hover { box-shadow: 0 8px 32px rgba(37,28,20,0.06); }
+
+    /* Collapsible: <details>/<summary> */
+    summary.ws-project-top {
+      padding: 2.5rem 4rem 2rem 2.5rem;  /* right padding reserves chevron space */
+      background: linear-gradient(180deg, rgba(242,228,216,0.3) 0%, white 100%);
+      cursor: pointer;
+      list-style: none;
+      position: relative;
+      transition: background 0.25s;
+    }
+
+    summary.ws-project-top::-webkit-details-marker { display: none; }
+    summary.ws-project-top::marker { display: none; }
+
+    .ws-project[open] summary.ws-project-top {
+      border-bottom: 1px solid rgba(184,98,58,0.1);
+    }
+
+    summary.ws-project-top:hover {
+      background: linear-gradient(180deg, rgba(242,228,216,0.45) 0%, white 100%);
+    }
+
+    .ws-project-chevron {
+      position: absolute;
+      top: 50%;
+      right: 1.75rem;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      color: var(--terra);
+      transition: transform 0.3s ease;
+      line-height: 1;
+    }
+
+    .ws-project[open] .ws-project-chevron { transform: translateY(-50%) rotate(180deg); }
+
+    .ws-project-badges {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .ws-project-num {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--terra);
+    }
+
+    .ws-project-count {
+      font-size: 0.7rem;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ws-project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
+    }
+
+    .ws-project-sub {
+      font-size: 0.95rem;
+      color: var(--mid);
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+    }
+
+    .ws-project-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .ws-event-tag {
+      background: var(--terra-pale);
+      color: var(--terra);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 1px;
+    }
+
+    .ws-project-dates { padding: 1.75rem 2.5rem 2rem; }
+
+    /* Shared label for subsections inside the project card */
+    .ws-project-subsection-label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Guides embedded inside the project card — editorial diptych layout */
+    .ws-project-guides {
+      padding: 1.75rem 0 2rem;
+      border-bottom: 1px solid rgba(184,98,58,0.1);
+      background: rgba(253,250,246,0.6);
+    }
+
+    .ws-guides-label {
+      padding: 0 2.5rem;
+    }
+
+    .ws-guides-diptych {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .ws-guides-photos {
+      display: grid;
+      grid-template-columns: repeat(var(--guides-count, 2), 1fr);
+      gap: 0;                          /* photos touch; connector unifies them */
+    }
+
+    .ws-guide-photo-large {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* Editorial "×" connector — evokes "Lucie × Katka" collab */
+    .ws-guides-connector {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 52px;
+      height: 52px;
+      background: var(--warm);
+      color: var(--terra);
+      border: 1px solid rgba(184,98,58,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      line-height: 1;
+      box-shadow: 0 6px 20px rgba(37,28,20,0.25);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .ws-guides-info {
+      display: grid;
+      grid-template-columns: repeat(var(--guides-count, 2), 1fr);
+      gap: 2rem;
+      padding: 0 2.5rem;
+    }
+
+    .ws-guide-info { display: flex; flex-direction: column; }
+
+    .ws-guide-role {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.35rem;
+    }
+
+    .ws-guide-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .ws-guide-bio {
+      font-size: 0.82rem;
+      line-height: 1.75;
+      color: var(--mid);
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+    }
+
+    .ws-guide-ig {
+      font-size: 0.76rem;
+      color: var(--terra);
+      text-decoration: none;
+      font-weight: 400;
+      margin-top: auto;
+    }
+
+    .ws-guide-ig:hover { text-decoration: underline; }
+
+    .ws-date {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      gap: 1.75rem;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-top: 1px solid rgba(184,98,58,0.1);
+    }
+
+    .ws-date:first-of-type { border-top: none; padding-top: 0.25rem; }
+
+    .ws-date-day { text-align: center; }
+
+    .ws-date-mo {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.15rem;
+    }
+
+    .ws-date-num {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1;
+    }
+
+    .ws-date-loc {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--dark);
+      margin-bottom: 0.3rem;
+    }
+
+    button.ws-date-loc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      transition: color 0.2s;
+    }
+
+    button.ws-date-loc-btn:hover { color: var(--terra); }
+
+    .ws-loc-icon {
+      font-size: 0.82rem;
+      color: var(--terra);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    button.ws-date-loc-btn:hover .ws-loc-icon { opacity: 1; }
+
+    .ws-date-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
+      font-size: 0.8rem;
+      color: var(--mid);
+      font-weight: 300;
+      align-items: center;
+    }
+
+    .ws-date-extra {
+      background: rgba(184,98,58,0.08);
+      color: var(--terra);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: 1px;
+    }
+
+    .ws-date-body .ws-brunch-badge {
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+    }
+
+    .ws-date-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .ws-date-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--dark);
+    }
+
+    .btn-event {
+      display: inline-block;
+      background: var(--terra);
+      color: white;
+      text-decoration: none;
+      padding: 0.55rem 1.3rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 1px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-event:hover { background: var(--dark); }
+
+    .ws-no-events {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--muted);
+      font-weight: 300;
+      font-size: 0.92rem;
+      border: 1px dashed rgba(184,98,58,0.2);
+      border-radius: 3px;
+    }
+
+    /* ─── BRUNCH BADGE + MODAL ─── */
+    .ws-brunch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--terra-pale);
+      color: var(--terra);
+      border: 1px solid rgba(184,98,58,0.25);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.7rem;
+      border-radius: 1px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 0.5rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .ws-brunch-badge:hover {
+      background: var(--terra);
+      color: white;
+    }
+
+    .ws-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(37,28,20,0.65);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      animation: wsFade 0.2s ease-out;
+    }
+
+    .ws-modal-overlay.is-open { display: flex; }
+
+    @keyframes wsFade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .ws-modal {
+      background: var(--warm);
+      border-radius: 3px;
+      max-width: 440px;
+      width: 100%;
+      padding: 2.5rem 2.25rem 2.25rem;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(37,28,20,0.3);
+      animation: wsSlide 0.25s ease-out;
+    }
+
+    @keyframes wsSlide {
+      from { transform: translateY(12px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .ws-modal-close {
+      position: absolute;
+      top: 0.9rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: var(--muted);
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.3rem 0.5rem;
+      transition: color 0.2s;
+    }
+
+    .ws-modal-close:hover { color: var(--dark); }
+
+    .ws-modal-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .ws-modal h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .ws-modal h3 em { font-style: italic; color: var(--terra); }
+
+    .ws-modal p {
+      font-size: 0.92rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .ws-modal-list {
+      list-style: none;
+      padding: 1rem 1.25rem;
+      background: rgba(184,98,58,0.06);
+      border-left: 2px solid var(--terra);
+      margin-bottom: 1.25rem;
+    }
+
+    .ws-modal-list li {
+      font-size: 0.86rem;
+      color: var(--dark);
+      font-weight: 400;
+      padding: 0.25rem 0;
+    }
+
+    .ws-modal-list li span {
+      color: var(--mid);
+      font-weight: 300;
+      font-size: 0.82rem;
+    }
+
+    /* ─── PROBĚHLO (ARCHIVE) ─── */
+    .ws-archive-empty {
+      text-align: center;
+      padding: 2.5rem;
+      border: 1px dashed rgba(184,98,58,0.2);
+      border-radius: 3px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .ws-archive-empty p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ─── PRACTICAL INFO ─── */
+    .ws-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 2rem auto 0;
+    }
+
+    .ws-info-block {
+      padding: 1.75rem 1.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 2px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .ws-info-block h4 {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra-light);
+      margin-bottom: 0.85rem;
+    }
+
+    .ws-info-block ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .ws-info-block li {
+      font-size: 0.84rem;
+      color: rgba(253,250,246,0.6);
+      font-weight: 300;
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .ws-info-block li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--terra-light);
+      font-size: 0.45rem;
+      top: 0.38rem;
+    }
+
+    .ws-price-block {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border: 1px solid rgba(184,98,58,0.3);
+      border-radius: 2px;
+      background: rgba(184,98,58,0.08);
+    }
+
+    .ws-price-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 400;
+      color: var(--terra-light);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .ws-price-desc { font-size: 0.8rem; color: rgba(253,250,246,0.5); font-weight: 300; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .ws-hero { padding: 4rem 2rem 3rem; }
+      .ws-section { padding: 3.5rem 2rem; }
+      .ws-info-grid { grid-template-columns: 1fr; }
+      summary.ws-project-top { padding: 2rem 3rem 1.75rem 1.5rem; }
+      .ws-project-dates { padding: 2rem 1.5rem; }
+      .ws-project-guides { padding: 2rem 0; }
+      .ws-guides-label, .ws-guides-info { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .ws-project-chevron { right: 1.1rem; font-size: 1rem; }
+      .ws-guides-connector { width: 42px; height: 42px; font-size: 1.15rem; }
+    }
+
+    @media (max-width: 720px) {
+      .ws-date {
+        grid-template-columns: 60px 1fr;
+        gap: 1rem;
+        row-gap: 0.75rem;
+      }
+      .ws-date-num { font-size: 1.9rem; }
+      .ws-date-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0.25rem;
+        border-top: 1px dashed rgba(184,98,58,0.12);
+      }
+      .ws-guides-info { gap: 1.25rem; }
+      .ws-guide-bio { font-size: 0.78rem; line-height: 1.65; }
+      .ws-guide-name { font-size: 1.05rem; }
+    }
+
+    @media (max-width: 580px) {
+      .ws-hero-pills { flex-direction: column; }
+      /* Photos stay paired (signals unity); bios stack to 1-col for readability */
+      .ws-guides-info { grid-template-columns: 1fr; gap: 1.5rem; }
+      .ws-guide-info { padding-top: 0.5rem; border-top: 1px solid rgba(184,98,58,0.1); }
+      .ws-guide-info:first-child { padding-top: 0; border-top: none; }
+      .ws-guide-photo-large { aspect-ratio: 3 / 4; }
+      .ws-project-title { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <a href="/workshop.html" class="lang-btn active">CZ</a>
+  <a href="/en/workshop.html" class="lang-btn">EN</a>
+</div>
+
+<nav>
+  <a href="/index.html" class="nav-logo">Lucie Linková<span>Hypopresivní metoda · Praha</span></a>
+  <ul class="nav-links">
+    <li><a href="/index.html#problems">Vaše potíže</a></li>
+    <li><a href="/index.html#about">O metodě</a></li>
+    <li class="has-dropdown">
+      <a href="/index.html#services">Nabídka</a>
+      <ul class="nav-dropdown">
+        <li><a href="/lekce.html">Individuální lekce</a></li>
+        <li><a href="/workshop.html">Workshopy</a></li>
+        <li><a href="/kurz.html">Kurzy</a></li>
+      </ul>
+    </li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/lekce.html" class="nav-book">Rezervovat</a></li>
+  </ul>
+</nav>
+
+<div class="ws-page">
+
+  <!-- 1. HERO -->
+  <div class="ws-hero">
+    <div class="ws-hero-inner">
+      <div class="s-tag">Workshopy · Praha</div>
+      <h1>Zažijte metodu<br><em>jinak.</em></h1>
+      <p class="ws-hero-sub">
+        Workshop není lekce navíc. Je to záměrné setkání, kde Lucie kombinuje
+        hypopresivní metodu s dalšími přístupy — pro hlubší zážitek, nové perspektivy
+        a jiný druh praxe.
+      </p>
+      <div class="ws-hero-pills">
+        <div class="ws-hero-pill"><strong>Různé metodologie</strong> · nejen hypopresivní</div>
+        <div class="ws-hero-pill"><strong>Limitovaná kapacita</strong> · max 7–20 osob</div>
+        <div class="ws-hero-pill"><strong>Různá prostředí</strong> · studio, příroda, terapie</div>
+      </div>
+      <a href="#ws-events" class="btn-main">Aktuální termíny →</a>
+    </div>
+  </div>
+
+  <!-- NADCHÁZEJÍCÍ WORKSHOPY (each project card now contains its own guides) -->
+  <div class="ws-section" id="ws-events">
+    <div class="s-tag">Nadcházející workshopy · 2026</div>
+    <h2>Vyberte si <em>svůj projekt a termín.</em></h2>
+    <p style="font-size:0.9rem;color:var(--mid);font-weight:300;max-width:560px;margin-bottom:2.5rem;line-height:1.75;">
+      Každý projekt je jedinečné spojení Lucie a další odbornice — s vlastním přístupem, rytmem a tématem. Vyberte si to, co vás osloví.
+    </p>
+
+    <div class="ws-projects-container" id="ws-projects-container">
+      <!-- Rendered dynamically from js/workshops.js -->
+    </div>
+  </div>
+
+  <!-- PRACTICAL INFO -->
+  <div class="ws-section ws-section-dark">
+    <div class="s-tag" style="color:var(--terra-light);border-color:rgba(184,98,58,0.3);">Praktické informace</div>
+    <h2 style="text-align:center;margin-bottom:0.5rem;">Co je <em>zahrnuto</em></h2>
+    <p style="text-align:center;font-size:0.87rem;color:rgba(253,250,246,0.45);font-weight:300;margin-bottom:0;">
+      Vše, co potřebujete vědět před rezervací.
+    </p>
+    <div class="ws-info-grid">
+      <div class="ws-price-block">
+        <div class="ws-price-num">1 500 Kč</div>
+        <div class="ws-price-desc">za celý workshop</div>
+        <div style="margin-top:1.25rem;font-size:0.78rem;color:rgba(253,250,246,0.5);font-weight:300;line-height:1.6;">
+          Platba po potvrzení místa.<br>
+          Dárkové poukazy k dispozici.
+        </div>
+      </div>
+      <div class="ws-info-block">
+        <h4>Zahrnuto v ceně</h4>
+        <ul>
+          <li>2 hodiny workshopu</li>
+          <li>1h hypopresivní metoda s Lucií</li>
+          <li>1h pranajáma s Katkou</li>
+          <li>Vybavení zajištěno v sále</li>
+        </ul>
+      </div>
+      <div class="ws-info-block">
+        <h4>Na co nezapomenout</h4>
+        <ul>
+          <li>Pohodlné oblečení</li>
+          <li>Na Grébovce s sebou karimatka</li>
+          <li>Nejezte 2 hodiny před workshopem</li>
+          <li>Storno nejpozději 48h předem</li>
+          <li>Dotazy: lucielinkova@bodyease.cz</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PROBĚHLO -->
+  <div class="ws-section ws-section-alt">
+    <div class="s-tag" style="justify-content:center;">Proběhlo</div>
+    <h2 style="text-align:center;">Co už jsme <em>zažili</em></h2>
+    <div class="ws-archive-empty">
+      <p>Workshopy teprve začínají — první proběhne 26. dubna 2026.<br>Po každém setkání zde přibude záznam a fotografie.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="ws-section" style="text-align:center;">
+    <div class="s-tag" style="justify-content:center;">Máte otázku?</div>
+    <h2>Ráda vám <em>odpovím.</em></h2>
+    <p style="font-size:0.93rem;color:var(--mid);font-weight:300;max-width:400px;margin:0 auto 2rem;line-height:1.75;">
+      Napište nebo zavolejte — Lucie odpoví osobně.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:+420792314472" class="btn-main">+420 792 314 472</a>
+      <a href="mailto:lucielinkova@bodyease.cz" class="btn-ghost" style="font-size:0.9rem;">lucielinkova@bodyease.cz</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- BRUNCH MODAL -->
+<div class="ws-modal-overlay" id="wsBrunchModal" role="dialog" aria-modal="true" aria-labelledby="wsBrunchTitle">
+  <div class="ws-modal">
+    <button type="button" class="ws-modal-close" aria-label="Zavřít">×</button>
+    <span class="ws-modal-icon">🥐</span>
+    <h3 id="wsBrunchTitle">Brunch a káva <em>v ceně</em></h3>
+    <p>Po workshopu na vás čeká společný brunch a káva přímo v místě konání. Je to součást zážitku — čas se zastavit, popovídat si a v klidu zakončit celé setkání.</p>
+    <ul class="ws-modal-list">
+      <li>✦ Teplý i studený brunch <span>(sladké i slané varianty)</span></li>
+      <li>✦ Čerstvě připravená káva a čaj</li>
+      <li>✦ Vše zahrnuto v ceně workshopu</li>
+    </ul>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0;">Prosíme, dejte nám předem vědět o případných alergiích nebo stravovacích preferencích.</p>
+  </div>
+</div>
+
+<!-- GENERIC INFO MODAL (location-specific descriptions) -->
+<div class="ws-modal-overlay" id="wsInfoModal" role="dialog" aria-modal="true" aria-labelledby="wsInfoTitle">
+  <div class="ws-modal">
+    <button type="button" class="ws-modal-close" aria-label="Zavřít">×</button>
+    <span class="ws-modal-icon" data-modal-icon></span>
+    <h3 id="wsInfoTitle" data-modal-title></h3>
+    <p data-modal-body></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="/index.html" class="footer-logo">Lucie Linková<span>Hypopresivní metoda</span></a>
+      <p class="footer-desc">Hypopresivní metoda a vědomý pohyb pro stabilitu, lehkost a zdravý střed těla. Praha 3.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigace</h5>
+      <ul>
+        <li><a href="/index.html#about">O metodě</a></li>
+        <li><a href="/workshop.html">Workshopy</a></li>
+        <li><a href="/kurz.html">Kurzy</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/lekce.html">Rezervace</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h5>Kontakt</h5>
+      <p>+420 792 314 472<br>lucielinkova@bodyease.cz</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucie Linková · bodyease.cz</p>
+    <p>Vytvořeno s ❤️ v Praze</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/workshops.js"></script>
+<script>
+  (function() {
+    const brunchModal = document.getElementById('wsBrunchModal');
+    const infoModal = document.getElementById('wsInfoModal');
+    if (!brunchModal && !infoModal) return;
+
+    const openModal = m => {
+      m.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeModal = m => {
+      m.classList.remove('is-open');
+      document.body.style.overflow = '';
+    };
+    const closeAll = () => [brunchModal, infoModal].forEach(m => m && closeModal(m));
+
+    const populateInfoModal = ({ icon, titleHtml, body }) => {
+      infoModal.querySelector('[data-modal-icon]').textContent = icon || '';
+      infoModal.querySelector('[data-modal-title]').innerHTML = titleHtml || '';
+      infoModal.querySelector('[data-modal-body]').textContent = body || '';
+    };
+
+    // Click delegation for both modal triggers
+    document.addEventListener('click', e => {
+      const brunchBtn = e.target.closest('[data-ws-modal="brunch"]');
+      if (brunchBtn && brunchModal) { openModal(brunchModal); return; }
+
+      const infoBtn = e.target.closest('[data-ws-info]');
+      if (infoBtn && infoModal) {
+        const key = infoBtn.dataset.wsInfo;
+        const info = (window.__wsLocationInfo || {})[key];
+        if (info) { populateInfoModal(info); openModal(infoModal); }
+        return;
+      }
+    });
+
+    // Close interactions for each modal
+    [brunchModal, infoModal].forEach(m => {
+      if (!m) return;
+      m.querySelector('.ws-modal-close').addEventListener('click', () => closeModal(m));
+      m.addEventListener('click', e => { if (e.target === m) closeModal(m); });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeAll();
+    });
+  })();
+</script>
+</body>
+</html>

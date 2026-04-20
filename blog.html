@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – Lucie Linková | Hypopresivní metoda</title>
+  <meta name="description" content="Z deníku trenérky — články o hypopresivní metodě, pánevním dně, dechu a vědomém pohybu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .blog-page { padding-top: 72px; background: var(--cream); min-height: 100vh; }
+
+    .blog-header {
+      padding: 4rem 5rem 3rem;
+      background: var(--warm);
+      border-bottom: 1px solid rgba(184,98,58,0.1);
+    }
+
+    .blog-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .blog-header h1 em { font-style: italic; color: var(--terra); }
+
+    .blog-header p {
+      font-size: 1rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 4rem 5rem;
+      max-width: 1200px;
+    }
+
+    .blog-card {
+      background: white;
+      border: 1px solid rgba(184,98,58,0.12);
+      border-radius: 2px;
+      overflow: hidden;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      transition: all 0.3s;
+    }
+
+    .blog-card:hover {
+      box-shadow: 0 16px 40px rgba(37,28,20,0.1);
+      border-color: var(--terra);
+    }
+
+    .blog-card-img {
+      width: 42%;
+      flex-shrink: 0;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      height: auto;
+      min-height: 220px;
+    }
+
+    .blog-card-body {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .blog-card-date {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.6rem;
+    }
+
+    .blog-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.4;
+      margin-bottom: 0.65rem;
+    }
+
+    .blog-card p {
+      font-size: 0.82rem;
+      color: var(--mid);
+      font-weight: 300;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .blog-card-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terra);
+      font-weight: 500;
+      margin-top: auto;
+    }
+
+    @media (max-width: 960px) {
+      .blog-header { padding: 3rem 2rem 2rem; }
+      .blog-grid { grid-template-columns: 1fr; padding: 3rem 2rem; }
+    }
+
+    @media (max-width: 580px) {
+      .blog-card { flex-direction: column; }
+      .blog-card-img { width: 100%; min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <a href="/blog.html" class="lang-btn active">CZ</a>
+  <a href="/en/blog.html" class="lang-btn">EN</a>
+</div>
+
+<nav>
+  <a href="/index.html" class="nav-logo">
+    Lucie Linková
+    <span>Hypopresivní metoda · Praha</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/index.html#problems">Vaše potíže</a></li>
+    <li><a href="/index.html#about">O metodě</a></li>
+    <li class="has-dropdown">
+      <a href="/index.html#services">Nabídka</a>
+      <ul class="nav-dropdown">
+        <li><a href="/lekce.html">Individuální lekce</a></li>
+        <li><a href="/workshop.html">Workshopy</a></li>
+        <li><a href="/kurz.html">Kurzy</a></li>
+      </ul>
+    </li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/lekce.html" class="nav-book">Rezervovat</a></li>
+  </ul>
+</nav>
+
+<div class="blog-page">
+
+  <div class="blog-header">
+    <div class="s-tag">Z deníku trenérky</div>
+    <h1>Články o <em>pohybu a dechu</em></h1>
+    <p>Píšu o tom, co mě zajímá a co denně vidím u svých klientek — pánevní dno, dech, hypopresivní metoda a vědomý pohyb.</p>
+  </div>
+
+  <div class="blog-grid">
+
+    <a href="/blog/sport-posilovna-panevni-dno.html" class="blog-card">
+      <img src="/assets/images/blog/sport-posilovna.webp" alt="Sport a pánevní dno" class="blog-card-img">
+      <div class="blog-card-body">
+        <div class="blog-card-date">3. září 2025</div>
+        <h2>Sport, posilovna a pánevní dno: Jak cvičit bezpečně?</h2>
+        <p>Tradiční cvičení jako sklapovačky nebo planky mohou zvyšovat nitrobřišní tlak a poškozovat pánevní dno. Jak cvičit chytře?</p>
+        <span class="blog-card-link">Číst článek →</span>
+      </div>
+    </a>
+
+    <a href="/blog/panevni-dno.html" class="blog-card">
+      <img src="/assets/images/blog/panevni-dno.webp" alt="Pánevní dno" class="blog-card-img">
+      <div class="blog-card-body">
+        <div class="blog-card-date">20. srpna 2025</div>
+        <h2>Pánevní dno: proč je důležité a jak ho udržet zdravé</h2>
+        <p>Zdravé pánevní dno neznamená jen silné — musí být pružné, koordinované s dechem a reagovat na různé situace.</p>
+        <span class="blog-card-link">Číst článek →</span>
+      </div>
+    </a>
+
+    <a href="/blog/dechove-parametry.html" class="blog-card">
+      <img src="/assets/images/blog/dechove-parametry.jpg" alt="Dechové parametry" class="blog-card-img">
+      <div class="blog-card-body">
+        <div class="blog-card-date">17. srpna 2025</div>
+        <h2>Jak si zlepšit dechové parametry – jednoduchý návod pro každý den</h2>
+        <p>Osobní příběh o ztuhlé bránici, chybné diagnóze astmatu a o tom, jak vědomá práce s dechem změnila mé cvičení.</p>
+        <span class="blog-card-link">Číst článek →</span>
+      </div>
+    </a>
+
+    <a href="/blog/stres-a-napeti.html" class="blog-card">
+      <img src="/assets/images/blog/stres-napeti.webp" alt="Stres a napětí" class="blog-card-img">
+      <div class="blog-card-body">
+        <div class="blog-card-date">17. srpna 2025</div>
+        <h2>Zbavte se stresu a napětí – stačí pár minut hypopresivního cvičení</h2>
+        <p>Chronický stres se projevuje fyzicky — zkrácený dech, ztuhlá bránice, trávicí potíže. Hypopresivní metoda pomáhá uvolnit napětí.</p>
+        <span class="blog-card-link">Číst článek →</span>
+      </div>
+    </a>
+
+    <a href="/blog/branice.html" class="blog-card">
+      <img src="/assets/images/blog/branice.webp" alt="Bránice" class="blog-card-img">
+      <div class="blog-card-body">
+        <div class="blog-card-date">17. srpna 2025</div>
+        <h2>Bránice – hlavní dýchací sval, který ovlivňuje víc, než tušíte</h2>
+        <p>Bránice není jen dýchací sval. Ovlivňuje stabilizaci páteře, trávení, reflux, lymfatický systém i reakci na stres.</p>
+        <span class="blog-card-link">Číst článek →</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="/index.html" class="footer-logo">Lucie Linková<span>Hypopresivní metoda</span></a>
+      <p class="footer-desc">Hypopresivní metoda a vědomý pohyb pro stabilitu, lehkost a zdravý střed těla. Vinohrady.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigace</h5>
+      <ul>
+        <li><a href="/index.html#problems">Vaše potíže</a></li>
+        <li><a href="/index.html#about">O metodě</a></li>
+        <li><a href="/index.html#kurzy">Kurzy</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/lekce.html">Rezervace</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h5>Kontakt</h5>
+      <p>MotherGood studio<br>Sudoměřská 1243/25, Vinohrady<br>+420 792 314 472<br>lucielinkova@bodyease.cz</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Lucie Linková · bodyease.cz</p>
+    <p>Vytvořeno s ❤️ v Praze</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

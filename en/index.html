@@ -26,7 +26,15 @@
   <ul class="nav-links">
     <li><a href="#problems">Your concerns</a></li>
     <li><a href="#about">The method</a></li>
-    <li><a href="#services">Services</a></li>
+    <li class="has-dropdown">
+      <a href="#services">Services</a>
+      <ul class="nav-dropdown">
+        <li><a href="/en/lekce.html">Private sessions</a></li>
+        <li><a href="/en/workshop.html">Workshops</a></li>
+        <li><a href="/en/kurz.html">Courses</a></li>
+      </ul>
+    </li>
+    <li><a href="/blog.html">Blog</a></li>
     <li><a href="#booking" class="nav-book">Book now</a></li>
   </ul>
 </nav>
@@ -48,7 +56,7 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num">8+</div>
+        <div class="stat-num">10+</div>
         <div class="stat-label">years experience</div>
       </div>
       <div class="stat-item">
@@ -64,13 +72,13 @@
   <div class="hero-right">
     <div class="hero-photo-area">
       <div class="photo-shape">
-        <p>Lucie's photo here</p>
+        <img src="/assets/images/lucie.png" alt="Lucie Linková">
       </div>
       <div class="floating-card card-top">
         <div class="card-icon">🌿</div>
         <div>
           <div class="card-info-num">Prague 3</div>
-          <div class="card-info-text">Hit Fitness Flóra</div>
+          <div class="card-info-text">MotherGood studio</div>
         </div>
       </div>
       <div class="floating-card card-right">
@@ -86,35 +94,41 @@
   <div class="s-tag">Does this sound familiar?</div>
   <h2 class="s-title">What's <em>making</em> every day harder</h2>
   <div class="problems-grid">
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="tlak">
       <span class="prob-emoji">🫀</span>
       <h3>Pelvic pressure</h3>
       <p>A feeling of heaviness or downward pressure, especially after prolonged standing or physical exertion.</p>
+      <span class="prob-more">Read more →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="brisko">
       <span class="prob-emoji">🤰</span>
       <h3>Bloated belly / diastasis</h3>
       <p>Bloating or diastasis. Classic exercises don't help — and sometimes make things worse.</p>
+      <span class="prob-more">Read more →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="unik">
       <span class="prob-emoji">💧</span>
       <h3>Urinary leakage</h3>
       <p>Weakened pelvic floor affecting confidence in movement. When coughing, laughing, or jumping.</p>
+      <span class="prob-more">Read more →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="zada">
       <span class="prob-emoji">🔥</span>
       <h3>Back pain</h3>
       <p>Tension in the lumbar spine and neck. Pain that keeps coming back no matter what you try.</p>
+      <span class="prob-more">Read more →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="reflux">
       <span class="prob-emoji">⚡</span>
       <h3>Reflux &amp; digestion</h3>
       <p>Reflux and digestive issues are often linked to diaphragm tension — not the stomach itself.</p>
+      <span class="prob-more">Read more →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="dech">
       <span class="prob-emoji">🌬️</span>
       <h3>Shallow breathing</h3>
       <p>Shallow breath, feeling of not breathing deeply enough, persistent inner tension.</p>
+      <span class="prob-more">Read more →</span>
     </div>
   </div>
 </section>
@@ -123,7 +137,7 @@
 <section class="section" id="about">
   <div class="about-grid">
     <div class="about-visual">
-      <div class="about-blob"></div>
+      <div class="about-blob"><img src="/assets/images/lucie-new.jpeg" alt="Lucie Linková"></div>
       <div class="about-quote">
         <p>&ldquo;The body responds to conditions, not to force.&rdquo;</p>
         <cite>— Lucie Linková</cite>
@@ -167,13 +181,32 @@
       <div class="svc-num">03</div>
       <h3>Workshops</h3>
       <p>Weekend specials focused on conscious movement, breath and the hypopressive method.</p>
-      <a href="#booking" class="svc-link">More info →</a>
+      <a href="/en/workshop.html" class="svc-link">More info →</a>
     </div>
     <div class="svc-card">
       <div class="svc-num">04</div>
       <h3>Online programs</h3>
       <p>Learn the method from the comfort of your home. Coming soon — in preparation.</p>
       <a href="#" class="svc-link">Soon →</a>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section section-alt" id="courses">
+  <div class="kurzy-promo">
+    <div class="kurzy-promo-left">
+      <div class="s-tag">New course · Spring 2026</div>
+      <h2 class="s-title" style="margin-bottom:1rem;">Intermediate course —<br><em>10 sessions, 4 000 CZK</em></h2>
+      <ul class="kurzy-promo-list">
+        <li>5 time slots — Tuesday, Wednesday or Thursday</li>
+        <li>Starting 14 April 2026</li>
+        <li>MotherGood studio · Vinohrady</li>
+        <li>Every session recorded · make-up lessons available</li>
+      </ul>
+    </div>
+    <div class="kurzy-promo-right">
+      <a href="/kurz.html" class="btn-kurz">View course<br><span>schedule, sign up, payment →</span></a>
     </div>
   </div>
 </section>
@@ -235,8 +268,8 @@
       <div class="price-card">
         <div class="price-type">Group</div>
         <h4>Group class</h4>
-        <p>60 min · max 8 people · Prague 3</p>
-        <div class="price-amount">from 350 CZK</div>
+        <p>60 min · 6–10 people · Vinohrady</p>
+        <div class="price-amount">from 400 CZK</div>
       </div>
       <div class="price-card featured">
         <div class="price-type">Recommended</div>
@@ -281,24 +314,35 @@
     <div class="footer-col footer-contact">
       <h5>Contact</h5>
       <p>
-        Hit Fitness Flóra<br>
-        Chrudimská 2b, Prague 3<br>
+        MotherGood studio<br>
+        Sudoměřská 1243/25, Vinohrady<br>
         +420 792 314 472<br>
-        info@stredtela.cz
+        lucielinkova@bodyease.cz
       </p>
       <br>
       <p>
-        <a href="https://instagram.com/stredtela_hypopresivo" style="color:var(--terra-light)">Instagram</a> &nbsp;·&nbsp;
+        <a href="https://instagram.com/bodyease_hypopressive" style="color:var(--terra-light)">Instagram</a> &nbsp;·&nbsp;
         <a href="https://facebook.com" style="color:var(--terra-light)">Facebook</a> &nbsp;·&nbsp;
-        <a href="https://youtube.com/@stredtela" style="color:var(--terra-light)">YouTube</a>
+        <a href="https://youtube.com/@bodyease_hypopressive" style="color:var(--terra-light)">YouTube</a>
       </p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Lucie Linková · stredtela.cz</p>
+    <p>© 2026 Lucie Linková · bodyease.cz</p>
     <p>Made with ❤️ in Prague</p>
   </div>
 </footer>
+
+<!-- PROBLEM MODAL -->
+<div class="prob-modal-overlay" id="probModal" aria-hidden="true">
+  <div class="prob-modal" role="dialog" aria-modal="true">
+    <button class="prob-modal-close" id="probModalClose" aria-label="Close">✕</button>
+    <div class="prob-modal-icon" id="probModalIcon"></div>
+    <h3 class="prob-modal-title" id="probModalTitle"></h3>
+    <div class="prob-modal-body" id="probModalBody"></div>
+    <a href="/kurz.html" class="prob-modal-cta">Join a course →</a>
+  </div>
+</div>
 
 <script src="../js/main.js"></script>
 </body>

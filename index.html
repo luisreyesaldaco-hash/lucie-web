@@ -26,7 +26,15 @@
   <ul class="nav-links">
     <li><a href="#problems">Vaše potíže</a></li>
     <li><a href="#about">O metodě</a></li>
-    <li><a href="#services">Nabídka</a></li>
+    <li class="has-dropdown">
+      <a href="#services">Nabídka</a>
+      <ul class="nav-dropdown">
+        <li><a href="/lekce.html">Individuální lekce</a></li>
+        <li><a href="/workshop.html">Workshopy</a></li>
+        <li><a href="/kurz.html">Kurzy</a></li>
+      </ul>
+    </li>
+    <li><a href="/blog.html">Blog</a></li>
     <li><a href="#booking" class="nav-book">Rezervovat</a></li>
   </ul>
 </nav>
@@ -48,12 +56,12 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num">8+</div>
+        <div class="stat-num">10+</div>
         <div class="stat-label">let zkušeností</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">200+</div>
-        <div class="stat-label">spokojených klientek</div>
+        <div class="stat-label">spokojených klientů</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">4</div>
@@ -64,13 +72,13 @@
   <div class="hero-right">
     <div class="hero-photo-area">
       <div class="photo-shape">
-        <p>Foto Lucie zde</p>
+        <img src="/assets/images/lucie.png" alt="Lucie Linková">
       </div>
       <div class="floating-card card-top">
         <div class="card-icon">🌿</div>
         <div>
           <div class="card-info-num">Praha 3</div>
-          <div class="card-info-text">Hit Fitness Flóra</div>
+          <div class="card-info-text">MotherGood studio</div>
         </div>
       </div>
       <div class="floating-card card-right">
@@ -86,35 +94,41 @@
   <div class="s-tag">Rozpoznáváte se?</div>
   <h2 class="s-title">Co vám <em>komplikuje</em> každý den</h2>
   <div class="problems-grid">
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="tlak">
       <span class="prob-emoji">🫀</span>
       <h3>Tlak v pánvi</h3>
       <p>Pocit tahu nebo tlaku směrem dolů, hlavně při delším stání nebo fyzické námaze.</p>
+      <span class="prob-more">Číst více →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="brisko">
       <span class="prob-emoji">🤰</span>
       <h3>Vypouklé břicho</h3>
       <p>Pocit nafouknutí nebo diastázy. Klasické cviky nepomáhají — a někdy situaci zhoršují.</p>
+      <span class="prob-more">Číst více →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="unik">
       <span class="prob-emoji">💧</span>
       <h3>Únik moči</h3>
       <p>Oslabení pánevního dna, které narušuje jistotu v pohybu. Při kašli, smíchu nebo skákání.</p>
+      <span class="prob-more">Číst více →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="zada">
       <span class="prob-emoji">🔥</span>
       <h3>Bolest zad</h3>
       <p>Přetížení v bedrech a krční páteři. Bolest, která se vrací bez ohledu na to, co zkoušíte.</p>
+      <span class="prob-more">Číst více →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="reflux">
       <span class="prob-emoji">⚡</span>
       <h3>Reflux a trávení</h3>
       <p>Reflux a trávicí obtíže jsou často spojeny s napětím v oblasti bránice — ne žaludku.</p>
+      <span class="prob-more">Číst více →</span>
     </div>
-    <div class="prob-card">
+    <div class="prob-card" role="button" tabindex="0" data-modal="dech">
       <span class="prob-emoji">🌬️</span>
       <h3>Napjatý dech</h3>
       <p>Povrchový dech, pocit nedodechnutí, vnitřní napětí, které neustupuje.</p>
+      <span class="prob-more">Číst více →</span>
     </div>
   </div>
 </section>
@@ -123,7 +137,7 @@
 <section class="section" id="about">
   <div class="about-grid">
     <div class="about-visual">
-      <div class="about-blob"></div>
+      <div class="about-blob"><img src="/assets/images/lucie-new.jpeg" alt="Lucie Linková"></div>
       <div class="about-quote">
         <p>&ldquo;Tělo reaguje na podmínky, ne na sílu.&rdquo;</p>
         <cite>— Lucie Linková</cite>
@@ -131,7 +145,7 @@
     </div>
     <div class="about-content">
       <div class="s-tag">Proč je to jinak</div>
-      <h2>Nepracuji se svaly.<br>Pracuji s <em>celým systémem.</em></h2>
+      <h2>Nepracuji jen se svaly.<br>Pracuji s <em>celým systémem.</em></h2>
       <p>
         Hypopresivní metoda není jen dechové cvičení. Je to precizní rehabilitační technika,
         která pracuje se souhrou bránice, pánevního dna a nervového systému jako celku.
@@ -167,13 +181,32 @@
       <div class="svc-num">03</div>
       <h3>Workshopy</h3>
       <p>Víkendové speciály zaměřené na vědomý pohyb, dech a hypopresivní metodu.</p>
-      <a href="#booking" class="svc-link">Více info →</a>
+      <a href="/workshop.html" class="svc-link">Více info →</a>
     </div>
     <div class="svc-card">
       <div class="svc-num">04</div>
       <h3>Online programy</h3>
       <p>Naučte se metodu z pohodlí domova. Brzy v nabídce — připravuji pro vás.</p>
       <a href="#" class="svc-link">Brzy →</a>
+    </div>
+  </div>
+</section>
+
+<!-- KURZY -->
+<section class="section section-alt" id="kurzy">
+  <div class="kurzy-promo">
+    <div class="kurzy-promo-left">
+      <div class="s-tag">Nový kurz · Jaro 2026</div>
+      <h2 class="s-title" style="margin-bottom:1rem;">Kurz mírně pokročilí —<br><em>10 lekcí, 4 000 Kč</em></h2>
+      <ul class="kurzy-promo-list">
+        <li>5 termínů k výběru — úterý, středa nebo čtvrtek</li>
+        <li>Začínáme 14. dubna 2026</li>
+        <li>MotherGood studio · Vinohrady</li>
+        <li>Každá lekce nahrávána · náhrada možná</li>
+      </ul>
+    </div>
+    <div class="kurzy-promo-right">
+      <a href="/kurz.html" class="btn-kurz">Zobrazit kurz<br><span>termíny, přihláška, platba →</span></a>
     </div>
   </div>
 </section>
@@ -235,8 +268,9 @@
       <div class="price-card">
         <div class="price-type">Skupinová</div>
         <h4>Skupinová lekce</h4>
-        <p>60 minut · max 8 osob · Praha 3</p>
-        <div class="price-amount">od 350 Kč</div>
+        <p>60 minut · 6–10 osob · Vinohrady</p>
+        <div class="price-amount">od 400 Kč</div>
+        <a href="/kurz.html" class="svc-link" style="display:inline-block;margin-top:1rem;">Více info →</a>
       </div>
       <div class="price-card featured">
         <div class="price-type">Doporučeno</div>
@@ -281,24 +315,35 @@
     <div class="footer-col footer-contact">
       <h5>Kontakt</h5>
       <p>
-        Hit Fitness Flóra<br>
-        Chrudimská 2b, Praha 3<br>
+        MotherGood studio<br>
+        Sudoměřská 1243/25, Vinohrady<br>
         +420 792 314 472<br>
-        info@stredtela.cz
+        lucielinkova@bodyease.cz
       </p>
       <br>
       <p>
-        <a href="https://instagram.com/stredtela_hypopresivo" style="color:var(--terra-light)">Instagram</a> &nbsp;·&nbsp;
+        <a href="https://instagram.com/bodyease_hypopressive" style="color:var(--terra-light)">Instagram</a> &nbsp;·&nbsp;
         <a href="https://facebook.com" style="color:var(--terra-light)">Facebook</a> &nbsp;·&nbsp;
-        <a href="https://youtube.com/@stredtela" style="color:var(--terra-light)">YouTube</a>
+        <a href="https://youtube.com/@bodyease_hypopressive" style="color:var(--terra-light)">YouTube</a>
       </p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Lucie Linková · stredtela.cz</p>
+    <p>© 2026 Lucie Linková · bodyease.cz</p>
     <p>Vytvořeno s ❤️ v Praze</p>
   </div>
 </footer>
+
+<!-- PROBLEM MODAL -->
+<div class="prob-modal-overlay" id="probModal" aria-hidden="true">
+  <div class="prob-modal" role="dialog" aria-modal="true">
+    <button class="prob-modal-close" id="probModalClose" aria-label="Zavřít">✕</button>
+    <div class="prob-modal-icon" id="probModalIcon"></div>
+    <h3 class="prob-modal-title" id="probModalTitle"></h3>
+    <div class="prob-modal-body" id="probModalBody"></div>
+    <a href="/kurz.html" class="prob-modal-cta">Přihlásit se na kurz →</a>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 </body>
