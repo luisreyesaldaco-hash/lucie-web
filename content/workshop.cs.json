@@ -1,0 +1,172 @@
+{
+  "hero": {
+    "tag": "Workshopy · Praha",
+    "titleHtml": "Zažijte metodu<br><em>jinak.</em>",
+    "sub": "Workshop není lekce navíc. Je to záměrné setkání, kde Lucie kombinuje hypopresivní metodu s dalšími přístupy — pro hlubší zážitek, nové perspektivy a jiný druh praxe.",
+    "pills": [
+      { "strong": "Různé metodologie", "text": "nejen hypopresivní" },
+      { "strong": "Limitovaná kapacita", "text": "max 7–20 osob" },
+      { "strong": "Různá prostředí", "text": "studio, příroda, terapie" }
+    ],
+    "ctaText": "Aktuální termíny →",
+    "ctaHref": "#ws-events"
+  },
+  "events": {
+    "tag": "Nadcházející workshopy · 2026",
+    "titleHtml": "Vyberte si <em>svůj projekt a termín.</em>",
+    "intro": "Každý projekt je jedinečné spojení Lucie a další odbornice — s vlastním přístupem, rytmem a tématem. Vyberte si to, co vás osloví.",
+    "guidesSubsectionLabel": "Kdo vás povede",
+    "datesSubsectionLabel": "Nadcházející termíny",
+    "bookingCta": "Přihlásit se →",
+    "noEventsText": "Momentálně nejsou vypsané nové termíny. Brzy připravujeme další.",
+    "terminOne": "1 termín",
+    "terminFew": "{n} termíny",
+    "terminMany": "{n} termínů",
+    "maxCapacityLabel": "Max {n} osob",
+    "currency": "Kč",
+    "locale": "cs-CZ"
+  },
+  "practical": {
+    "tag": "Praktické informace",
+    "titleHtml": "Co je <em>zahrnuto</em>",
+    "subtitle": "Vše, co potřebujete vědět před rezervací.",
+    "price": {
+      "amount": "1 500 Kč",
+      "desc": "za celý workshop",
+      "noteHtml": "Platba po potvrzení místa.<br>Dárkové poukazy k dispozici."
+    },
+    "included": {
+      "title": "Zahrnuto v ceně",
+      "items": [
+        "Plná pozornost průvodkyň",
+        "Energie a synergie skupiny",
+        "Bezpečný prostor bez tlaku",
+        "Zázemí a vybavení na místě",
+        "Čas zpomalit a být se sebou"
+      ]
+    },
+    "bring": {
+      "title": "Na co nezapomenout",
+      "items": [
+        "Pohodlné i teplé oblečení (ponožky, mikina)",
+        "Nejezte 2 hodiny před workshopem",
+        "Ve studiu máme vodu a podložky",
+        "Venku nebo v solné jeskyni: vlastní karimatku a vodu",
+        "Cvičí se naboso, ven pohodlnou obuv",
+        "Dotazy: <a href=\"mailto:lucielinkova@bodyease.cz\">lucielinkova@bodyease.cz</a>"
+      ]
+    }
+  },
+  "storno": {
+    "title": "Storno podmínky",
+    "intro": "Život se občas zamotá — chápeme to. Abychom udrželi workshop kvalitním zážitkem pro celou skupinu, držíme se jednoduchých pravidel.",
+    "tiers": [
+      { "pct": "100 %", "label": "vrátíme", "when": "více než 14 dní předem" },
+      { "pct": "50 %", "label": "vrátíme", "when": "48 h až 14 dní předem" },
+      { "pct": "0 %", "label": "nevracíme", "when": "méně než 48 hodin", "isZero": true }
+    ],
+    "note": "Za sebe můžeš kdykoliv poslat náhradníka. Pokud bychom workshop rušili z naší strany (např. nízký počet účastníků), nabídneme náhradní termín nebo vrátíme plnou částku."
+  },
+  "archive": {
+    "tag": "Proběhlo",
+    "titleHtml": "Co už jsme <em>zažili</em>",
+    "emptyHtml": "Workshopy teprve začínají — první proběhne 26. dubna 2026.<br>Po každém setkání zde přibude záznam a fotografie."
+  },
+  "contact": {
+    "tag": "Máte otázku?",
+    "titleHtml": "Ráda vám <em>odpovím.</em>",
+    "sub": "Napište nebo zavolejte — Lucie odpoví osobně.",
+    "phone": "+420 792 314 472",
+    "phoneHref": "tel:+420792314472",
+    "email": "lucielinkova@bodyease.cz",
+    "emailHref": "mailto:lucielinkova@bodyease.cz"
+  },
+  "modals": {
+    "closeLabel": "Zavřít",
+    "brunch": {
+      "icon": "🥐",
+      "titleHtml": "Brunch a káva <em>v ceně</em>",
+      "body": "Po workshopu na vás čeká společný brunch a káva přímo v místě konání. Je to součást zážitku — čas se zastavit, popovídat si a v klidu zakončit celé setkání.",
+      "itemsHtml": [
+        "✦ Teplý i studený brunch <span>(sladké i slané varianty)</span>",
+        "✦ Čerstvě připravená káva a čaj",
+        "✦ Vše zahrnuto v ceně workshopu"
+      ],
+      "footnote": "Prosíme, dejte nám předem vědět o případných alergiích nebo stravovacích preferencích.",
+      "badgeLabel": "✦ Brunch + káva v ceně"
+    }
+  },
+  "projects": [
+    {
+      "id": "dech-panevni-dno",
+      "label": "Projekt 01",
+      "title": "Dech a pánevní dno",
+      "subtitle": "Hypopresivní metoda + vědomý dech",
+      "tags": ["Hypopresivní", "Pranajáma"],
+      "guides": [
+        {
+          "name": "Lucie Linková",
+          "photo": "/assets/images/lucie-new.jpeg",
+          "role": "Hypopresivní metoda",
+          "bio": "Vědomá práce s nitrobřišním tlakem, bránicí a pánevním dnem. Lucie vás provede technikou, která aktivuje hluboký stabilizační systém — bez síly, bez přetěžování. Tělo se učí fungovat efektivněji prostřednictvím dechu a polohy.",
+          "instagram": "@bodyease_hypopressive",
+          "igUrl": "https://instagram.com/bodyease_hypopressive"
+        },
+        {
+          "name": "Katka",
+          "photo": "/assets/images/katka.jpeg",
+          "role": "Pranajáma · vědomý dech",
+          "bio": "Pranajáma je starobylá jógová praxe vědomé práce s dechem — přímý vstup do nervové soustavy. Prostřednictvím prodlouženého výdechu, zadržení dechu a střídavého dýchání Katka zklidňuje mysl, reguluje stres a prohlubuje vědomí těla.",
+          "instagram": "@breathart_katerina",
+          "igUrl": "https://instagram.com/breathart_katerina"
+        }
+      ],
+      "dates": [
+        {
+          "iso": "2026-04-26",
+          "monthLabel": "Duben",
+          "time": "9:15 – 11:15",
+          "location": "Studio jógy · Vršovice",
+          "capacity": 10,
+          "extras": [],
+          "price": 1500,
+          "brunch": true,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
+        },
+        {
+          "iso": "2026-06-13",
+          "monthLabel": "Červen",
+          "time": "9:15 – 11:15",
+          "location": "Grébovka · venku",
+          "capacity": 20,
+          "extras": ["Outdoor"],
+          "price": 1500,
+          "brunch": true,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
+          "locationInfo": {
+            "icon": "🌿",
+            "titleHtml": "Milujeme <em>Grébovku</em>",
+            "body": "Ranní klid, čerstvý vzduch, rozkvetlá zeleň… a do toho jemné cvičení, které tě probudí."
+          }
+        },
+        {
+          "iso": "2026-09-19",
+          "monthLabel": "Září",
+          "time": "9:30 – 11:00",
+          "location": "Solná jeskyně · Praha",
+          "capacity": 7,
+          "extras": ["Solná jeskyně"],
+          "price": 1500,
+          "brunch": false,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
+          "locationInfo": {
+            "icon": "✦",
+            "titleHtml": "Síla <em>solné jeskyně</em>",
+            "body": "Solná jeskyně přirozeně podporuje dýchací cesty, zklidňuje organismus a pomáhá uvolnit napětí. Mikroklima s obsahem minerálů může přispět ke zlepšení imunity, kvalitnějšímu dýchání a celkovému zklidnění.",
+            "badgeLabel": "✦ Proč solná jeskyně"
+          }
+        }
+      ]
+    }
+  ]
+}

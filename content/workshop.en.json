@@ -1,0 +1,172 @@
+{
+  "hero": {
+    "tag": "Workshops · Prague",
+    "titleHtml": "Experience the method<br><em>differently.</em>",
+    "sub": "A workshop isn't just another class. It's an intentional gathering where Lucie combines the hypopressive method with other approaches — for deeper experience, new perspectives, and a different kind of practice.",
+    "pills": [
+      { "strong": "Multiple methodologies", "text": "not just hypopressive" },
+      { "strong": "Limited capacity", "text": "max 7–20 people" },
+      { "strong": "Varied settings", "text": "studio, outdoors, therapeutic" }
+    ],
+    "ctaText": "Upcoming dates →",
+    "ctaHref": "#ws-events"
+  },
+  "events": {
+    "tag": "Upcoming workshops · 2026",
+    "titleHtml": "Choose <em>your project and date.</em>",
+    "intro": "Each project is a unique collaboration between Lucie and another expert — with its own approach, rhythm, and theme. Pick the one that speaks to you.",
+    "guidesSubsectionLabel": "Your guides",
+    "datesSubsectionLabel": "Upcoming dates",
+    "bookingCta": "Book →",
+    "noEventsText": "No upcoming dates are currently scheduled. New ones coming soon.",
+    "terminOne": "1 date",
+    "terminFew": "{n} dates",
+    "terminMany": "{n} dates",
+    "maxCapacityLabel": "Max {n} people",
+    "currency": "CZK",
+    "locale": "en-US"
+  },
+  "practical": {
+    "tag": "Practical information",
+    "titleHtml": "What's <em>included</em>",
+    "subtitle": "Everything you need to know before booking.",
+    "price": {
+      "amount": "1,500 CZK",
+      "desc": "per workshop",
+      "noteHtml": "Payment after your place is confirmed.<br>Gift vouchers available."
+    },
+    "included": {
+      "title": "What's included",
+      "items": [
+        "Full attention from your guides",
+        "The energy and synergy of the group",
+        "A safe, pressure-free space",
+        "Equipment and setting provided",
+        "Time to slow down and be with yourself"
+      ]
+    },
+    "bring": {
+      "title": "What to bring",
+      "items": [
+        "Comfortable clothes + something warm (socks, sweatshirt)",
+        "Don't eat 2 hours before the workshop",
+        "Water and mats are provided at the studio",
+        "For outdoor or salt cave sessions: bring your own mat and water",
+        "We practice barefoot — comfy shoes for outdoor venues",
+        "Questions: <a href=\"mailto:lucielinkova@bodyease.cz\">lucielinkova@bodyease.cz</a>"
+      ]
+    }
+  },
+  "storno": {
+    "title": "Cancellation policy",
+    "intro": "Life sometimes gets in the way — we get it. To keep the workshop a quality experience for the whole group, we stick to a few simple rules.",
+    "tiers": [
+      { "pct": "100 %", "label": "refund", "when": "more than 14 days before" },
+      { "pct": "50 %", "label": "refund", "when": "48 h to 14 days before" },
+      { "pct": "0 %", "label": "no refund", "when": "less than 48 hours", "isZero": true }
+    ],
+    "note": "You can always send someone in your place. If we cancel the workshop from our side (e.g., low attendance), we'll offer an alternative date or a full refund."
+  },
+  "archive": {
+    "tag": "Past workshops",
+    "titleHtml": "What we've <em>lived</em>",
+    "emptyHtml": "Workshops are just beginning — the first takes place April 26, 2026.<br>After each gathering, recaps and photos will appear here."
+  },
+  "contact": {
+    "tag": "Have a question?",
+    "titleHtml": "I'd love to <em>answer.</em>",
+    "sub": "Write or call — Lucie replies personally.",
+    "phone": "+420 792 314 472",
+    "phoneHref": "tel:+420792314472",
+    "email": "lucielinkova@bodyease.cz",
+    "emailHref": "mailto:lucielinkova@bodyease.cz"
+  },
+  "modals": {
+    "closeLabel": "Close",
+    "brunch": {
+      "icon": "🥐",
+      "titleHtml": "Brunch & coffee <em>included</em>",
+      "body": "After the workshop, a shared brunch and coffee await you at the venue. It's part of the experience — time to pause, chat, and gently close the whole gathering.",
+      "itemsHtml": [
+        "✦ Warm and cold brunch <span>(sweet and savory options)</span>",
+        "✦ Freshly prepared coffee and tea",
+        "✦ Everything included in the workshop price"
+      ],
+      "footnote": "Please let us know in advance about any allergies or dietary preferences.",
+      "badgeLabel": "✦ Brunch + coffee included"
+    }
+  },
+  "projects": [
+    {
+      "id": "dech-panevni-dno",
+      "label": "Project 01",
+      "title": "Breath & pelvic floor",
+      "subtitle": "Hypopressive method + conscious breath",
+      "tags": ["Hypopressive", "Pranayama"],
+      "guides": [
+        {
+          "name": "Lucie Linková",
+          "photo": "/assets/images/lucie-new.jpeg",
+          "role": "Hypopressive method",
+          "bio": "Conscious work with intra-abdominal pressure, the diaphragm, and pelvic floor. Lucie guides you through a technique that activates your deep stabilizing system — no force, no strain. Your body learns to function more efficiently through breath and posture.",
+          "instagram": "@bodyease_hypopressive",
+          "igUrl": "https://instagram.com/bodyease_hypopressive"
+        },
+        {
+          "name": "Katka",
+          "photo": "/assets/images/katka.jpeg",
+          "role": "Pranayama · conscious breath",
+          "bio": "Pranayama is an ancient yogic practice of conscious breathwork — a direct entry into the nervous system. Through extended exhalation, breath retention, and alternate nostril breathing, Katka calms the mind, regulates stress, and deepens body awareness.",
+          "instagram": "@breathart_katerina",
+          "igUrl": "https://instagram.com/breathart_katerina"
+        }
+      ],
+      "dates": [
+        {
+          "iso": "2026-04-26",
+          "monthLabel": "April",
+          "time": "9:15 – 11:15",
+          "location": "Yoga studio · Vršovice",
+          "capacity": 10,
+          "extras": [],
+          "price": 1500,
+          "brunch": true,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
+        },
+        {
+          "iso": "2026-06-13",
+          "monthLabel": "June",
+          "time": "9:15 – 11:15",
+          "location": "Grébovka park · outdoor",
+          "capacity": 20,
+          "extras": ["Outdoor"],
+          "price": 1500,
+          "brunch": true,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
+          "locationInfo": {
+            "icon": "🌿",
+            "titleHtml": "We love <em>Grébovka</em>",
+            "body": "Morning calm, fresh air, blooming greenery… paired with gentle movement that wakes you up."
+          }
+        },
+        {
+          "iso": "2026-09-19",
+          "monthLabel": "September",
+          "time": "9:30 – 11:00",
+          "location": "Salt cave · Prague",
+          "capacity": 7,
+          "extras": ["Salt cave"],
+          "price": 1500,
+          "brunch": false,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
+          "locationInfo": {
+            "icon": "✦",
+            "titleHtml": "The power of the <em>salt cave</em>",
+            "body": "The salt cave naturally supports the respiratory system, calms the body, and helps release tension. The mineral-rich microclimate can strengthen immunity, improve breathing, and bring overall calm.",
+            "badgeLabel": "✦ Why the salt cave"
+          }
+        }
+      ]
+    }
+  ]
+}

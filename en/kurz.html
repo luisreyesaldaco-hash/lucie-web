@@ -332,39 +332,70 @@
     }
 
     .register-block {
-      background: var(--terra);
       border-radius: 2px;
       padding: 2.8rem 2.2rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .register-block .qr-label {
-      color: rgba(255,255,255,0.7);
+    .register-block--featured {
+      background: var(--terra);
+      color: white;
+      border: 2px solid var(--terra);
     }
+
+    .register-block--dropin {
+      background: var(--warm);
+      color: var(--dark);
+      border: 1px solid rgba(184,98,58,0.2);
+    }
+
+    .register-type {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .register-block--featured .register-type { color: rgba(255,255,255,0.75); }
+    .register-block--dropin .register-type { color: var(--terra); }
 
     .register-price {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 500;
-      color: white;
       line-height: 1;
       margin-bottom: 0.4rem;
     }
 
+    .register-block--featured .register-price { color: white; }
+    .register-block--dropin .register-price { color: var(--dark); }
+
+    .register-price-old {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: line-through;
+      margin-bottom: 0.25rem;
+      line-height: 1;
+    }
+
     .register-price-desc {
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.65);
       font-weight: 300;
       margin-bottom: 2rem;
     }
 
+    .register-block--featured .register-price-desc { color: rgba(255,255,255,0.7); }
+    .register-block--dropin .register-price-desc { color: var(--mid); }
+
     .register-block .btn-register {
       display: inline-block;
-      background: white;
-      color: var(--terra);
       padding: 0.9rem 2rem;
       font-size: 0.8rem;
       font-weight: 500;
@@ -375,18 +406,39 @@
       transition: all 0.3s;
     }
 
-    .register-block .btn-register:hover {
-      background: var(--dark);
-      color: white;
-      transform: translateY(-2px);
-    }
+    .register-block--featured .btn-register { background: white; color: var(--terra); }
+    .register-block--featured .btn-register:hover { background: var(--dark); color: white; transform: translateY(-2px); }
+
+    .register-block--dropin .btn-register { background: var(--terra); color: white; }
+    .register-block--dropin .btn-register:hover { background: var(--dark); transform: translateY(-2px); }
 
     .register-block .btn-note {
       margin-top: 1rem;
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.5);
       font-weight: 300;
     }
+
+    .register-block--featured .btn-note { color: rgba(255,255,255,0.5); }
+    .register-block--dropin .btn-note { color: var(--muted); }
+
+    .register-ribbon {
+      position: absolute;
+      top: 20px;
+      right: -48px;
+      transform: rotate(45deg);
+      background: var(--warm);
+      color: var(--terra);
+      padding: 0.4rem 3.5rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    .qr-payment-block { grid-column: 1 / -1; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
@@ -659,20 +711,33 @@
   <div class="kurz-section" id="registration">
     <div class="s-tag" style="justify-content:center;">Registration &amp; payment</div>
     <h2 style="text-align:center;">How to <em>sign up</em></h2>
-    <p style="text-align:center;font-size:0.93rem;color:var(--mid);font-weight:300;max-width:480px;margin:0 auto 2.5rem;line-height:1.75;">
-      Fill in the registration form and pay for the course by bank transfer. Your place is confirmed upon receipt of payment.
+    <p style="text-align:center;font-size:0.93rem;color:var(--mid);font-weight:300;max-width:540px;margin:0 auto 2.5rem;line-height:1.75;">
+      Choose what fits you best — a single drop-in class or the full course with a discount.
     </p>
     <div class="payment-register-grid">
 
-      <div class="register-block">
+      <!-- Drop-in (single class) -->
+      <div class="register-block register-block--dropin">
+        <div class="register-type">Drop-in</div>
+        <div class="register-price">500 CZK</div>
+        <div class="register-price-desc">for 1 class · 55 minutes</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3Os_RV5TBV-sCPVqWRVsadH0LUorm6JjNQcjfVml71RejhA/viewform" target="_blank" rel="noopener" class="btn-register">Book a class →</a>
+        <span class="btn-note">A great way to try the method before committing.</span>
+      </div>
+
+      <!-- Full course (featured with ribbon) -->
+      <div class="register-block register-block--featured">
+        <span class="register-ribbon">Save 1,000 CZK</span>
+        <div class="register-type">Full course</div>
+        <div class="register-price-old">5,000 CZK</div>
         <div class="register-price">4,000 CZK</div>
-        <div class="register-price-desc">for the full course · 10 classes · 55 min each</div>
+        <div class="register-price-desc">10 classes · 55 minutes each</div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3Os_RV5TBV-sCPVqWRVsadH0LUorm6JjNQcjfVml71RejhA/viewform" target="_blank" rel="noopener" class="btn-register">Register →</a>
         <span class="btn-note">After submitting the form, Lucie will contact you with payment details.</span>
       </div>
 
       <div class="qr-payment-block">
-        <div class="qr-label">Bank transfer · QR code</div>
+        <div class="qr-label">Full course payment · QR code</div>
         <div class="qr-placeholder">
             <img src="/assets/qr-platba.jpg" alt="QR payment 4,000 CZK">
         </div>
@@ -680,6 +745,7 @@
           <p>Scan the QR code with your banking app.</p>
           <p>Amount <strong>4,000 CZK</strong> fills in automatically.</p>
           <p style="margin-top:0.6rem;font-size:0.78rem;">Or transfer to: <strong>212121381/5500</strong><br>Payment reference: your full name</p>
+          <p style="margin-top:0.75rem;font-size:0.74rem;color:var(--muted);">For a single drop-in (500 CZK), we'll send payment details after your registration.</p>
         </div>
       </div>
 

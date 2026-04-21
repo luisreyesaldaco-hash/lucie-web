@@ -7,110 +7,8 @@
   <meta name="description" content="Workshops by Lucie Linková – unique experiences combining the hypopressive method with other practices. Prague 2026, limited capacity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
-  <style>
-    .ws-page { padding-top: 72px; background: var(--cream); }
-
-    .ws-hero {
-      background: linear-gradient(155deg, var(--dark) 0%, #3a2a1c 100%);
-      padding: 5.5rem 5rem 4.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .ws-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 80% 20%, rgba(184,98,58,0.18) 0%, transparent 55%),
-        radial-gradient(ellipse at 15% 80%, rgba(122,158,130,0.12) 0%, transparent 50%);
-    }
-
-    .ws-hero-inner { position: relative; max-width: 680px; }
-    .ws-hero .s-tag { color: var(--terra-light); border-color: rgba(184,98,58,0.3); }
-    .ws-hero .s-tag::before { background: var(--terra-light); }
-
-    .ws-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4.5vw, 3.5rem); font-weight: 400; line-height: 1.12; color: var(--warm); margin: 1.25rem 0 1.4rem; }
-    .ws-hero h1 em { font-style: italic; color: var(--terra-light); }
-    .ws-hero-sub { font-size: 1.05rem; color: rgba(253,250,246,0.65); font-weight: 300; line-height: 1.85; margin-bottom: 2.5rem; max-width: 520px; }
-    .ws-hero-pills { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2.5rem; }
-    .ws-hero-pill { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; padding: 0.45rem 1rem; font-size: 0.78rem; color: rgba(253,250,246,0.6); font-weight: 300; }
-    .ws-hero-pill strong { color: rgba(253,250,246,0.9); font-weight: 500; }
-
-    .ws-section { padding: 4.5rem 5rem; }
-    .ws-section-alt { background: var(--warm); }
-    .ws-section-dark { background: var(--dark); }
-    .ws-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 2.5vw, 2.3rem); font-weight: 400; color: var(--dark); line-height: 1.2; margin-bottom: 1.25rem; }
-    .ws-section h2 em { font-style: italic; color: var(--terra); }
-    .ws-section-dark h2 { color: var(--warm); }
-    .ws-section-dark h2 em { color: var(--terra-light); }
-
-    .ws-guides-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 860px; margin: 0 auto; }
-    .ws-guide-card { background: white; border: 1px solid rgba(184,98,58,0.12); border-radius: 3px; overflow: hidden; transition: box-shadow 0.3s; }
-    .ws-guide-card:hover { box-shadow: 0 8px 32px rgba(37,28,20,0.08); }
-    .ws-guide-photo { width: 100%; height: 320px; object-fit: cover; display: block; }
-    .ws-guide-body { padding: 1.75rem 1.75rem 2rem; }
-    .ws-guide-specialty { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.5rem; }
-    .ws-guide-body h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 400; color: var(--dark); margin-bottom: 0.75rem; }
-    .ws-guide-body p { font-size: 0.87rem; line-height: 1.8; color: var(--mid); font-weight: 300; }
-    .ws-guide-social { margin-top: 1rem; font-size: 0.78rem; }
-    .ws-guide-social a { color: var(--terra); text-decoration: none; font-weight: 400; }
-    .ws-guide-social a:hover { text-decoration: underline; }
-
-    .ws-events-list { display: flex; flex-direction: column; gap: 1.25rem; max-width: 860px; margin: 0 auto; }
-    .ws-event { display: grid; grid-template-columns: 100px 1fr auto; gap: 2rem; align-items: center; background: white; border: 1px solid rgba(184,98,58,0.12); border-radius: 3px; padding: 1.75rem 2rem; transition: border-color 0.2s, box-shadow 0.2s; }
-    .ws-event:hover { border-color: rgba(184,98,58,0.3); box-shadow: 0 4px 20px rgba(37,28,20,0.06); }
-    .ws-event-date { text-align: center; }
-    .ws-event-date .ev-month { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.2rem; }
-    .ws-event-date .ev-day { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 400; color: var(--dark); line-height: 1; }
-    .ws-event-info h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 400; color: var(--dark); margin-bottom: 0.35rem; }
-    .ws-event-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.8rem; color: var(--mid); font-weight: 300; }
-    .ws-event-meta span { white-space: nowrap; }
-    .ws-event-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
-    .ws-event-tag { background: var(--terra-pale); color: var(--terra); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 1px; }
-    .ws-event-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; flex-shrink: 0; }
-    .ws-event-price { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 400; color: var(--dark); }
-    .ws-event-price span { font-family: 'Outfit', sans-serif; font-size: 0.72rem; color: var(--muted); font-weight: 300; }
-    .ws-event .btn-event { display: inline-block; background: var(--terra); color: white; text-decoration: none; padding: 0.6rem 1.4rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 1px; transition: background 0.2s; white-space: nowrap; }
-    .ws-event .btn-event:hover { background: var(--dark); }
-
-    .ws-info-tip { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; background: var(--terra-pale); color: var(--terra); font-size: 0.65rem; font-weight: 600; font-style: italic; font-family: Georgia, serif; cursor: default; flex-shrink: 0; }
-    .ws-info-tip .ws-tooltip { display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--dark); color: rgba(253,250,246,0.85); font-family: 'Outfit', sans-serif; font-size: 0.72rem; font-weight: 300; font-style: normal; line-height: 1.55; padding: 0.6rem 0.9rem; border-radius: 2px; white-space: nowrap; z-index: 10; box-shadow: 0 4px 12px rgba(37,28,20,0.15); }
-    .ws-info-tip .ws-tooltip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--dark); }
-    .ws-info-tip:hover .ws-tooltip { display: block; }
-
-    .ws-archive-empty { text-align: center; padding: 2.5rem; border: 1px dashed rgba(184,98,58,0.2); border-radius: 3px; max-width: 560px; margin: 0 auto; }
-    .ws-archive-empty p { font-size: 0.88rem; color: var(--muted); font-weight: 300; line-height: 1.7; }
-
-    .ws-info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 2rem auto 0; }
-    .ws-info-block { padding: 1.75rem 1.5rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 2px; background: rgba(255,255,255,0.04); }
-    .ws-info-block h4 { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra-light); margin-bottom: 0.85rem; }
-    .ws-info-block ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .ws-info-block li { font-size: 0.84rem; color: rgba(253,250,246,0.6); font-weight: 300; padding-left: 1rem; position: relative; line-height: 1.55; }
-    .ws-info-block li::before { content: '✦'; position: absolute; left: 0; color: var(--terra-light); font-size: 0.45rem; top: 0.38rem; }
-    .ws-price-block { text-align: center; padding: 2rem 1.5rem; border: 1px solid rgba(184,98,58,0.3); border-radius: 2px; background: rgba(184,98,58,0.08); }
-    .ws-price-num { font-family: 'Playfair Display', serif; font-size: 3.2rem; font-weight: 400; color: var(--terra-light); line-height: 1; margin-bottom: 0.3rem; }
-    .ws-price-desc { font-size: 0.8rem; color: rgba(253,250,246,0.5); font-weight: 300; }
-
-    @media (max-width: 960px) {
-      .ws-hero { padding: 4rem 2rem 3rem; }
-      .ws-section { padding: 3.5rem 2rem; }
-      .ws-guides-grid { grid-template-columns: 1fr; max-width: 420px; }
-      .ws-info-grid { grid-template-columns: 1fr; }
-      .ws-event { grid-template-columns: 80px 1fr; gap: 1.25rem; }
-      .ws-event-actions { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; }
-    }
-
-    @media (max-width: 580px) {
-      .ws-hero-pills { flex-direction: column; }
-      .ws-event { grid-template-columns: 1fr; text-align: center; }
-      .ws-event-date { margin-bottom: 0.25rem; }
-      .ws-event-meta { justify-content: center; }
-      .ws-event-tags { justify-content: center; }
-      .ws-event-actions { align-items: center; justify-content: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/workshop.css">
 </head>
 <body>
 
@@ -138,226 +36,36 @@
 </nav>
 
 <div class="ws-page">
+  <!-- Content rendered by js/workshop-page.js from /content/workshop.en.json -->
+  <div id="ws-root"></div>
+</div>
 
-  <!-- 1. HERO -->
-  <div class="ws-hero">
-    <div class="ws-hero-inner">
-      <div class="s-tag">Workshops · Prague</div>
-      <h1>Experience the method<br><em>differently.</em></h1>
-      <p class="ws-hero-sub">
-        A workshop is not just an extra class. It's an intentional gathering where Lucie
-        combines the hypopressive method with other approaches — for a deeper experience,
-        new perspectives and a different kind of practice.
-      </p>
-      <div class="ws-hero-pills">
-        <div class="ws-hero-pill"><strong>Mixed methodologies</strong> · beyond hypopressive</div>
-        <div class="ws-hero-pill"><strong>Limited capacity</strong> · max 7–20 people</div>
-        <div class="ws-hero-pill"><strong>Different spaces</strong> · studio, outdoors, therapy</div>
-      </div>
-      <a href="#ws-events" class="btn-main">Upcoming dates →</a>
-    </div>
+<!-- Modal shells (populated dynamically by renderer) -->
+<div class="ws-modal-overlay" id="wsBrunchModal" role="dialog" aria-modal="true">
+  <div class="ws-modal">
+    <button type="button" class="ws-modal-close" data-close aria-label="Close">×</button>
+    <span class="ws-modal-icon" data-brunch-icon></span>
+    <h3 data-brunch-title></h3>
+    <p data-brunch-body></p>
+    <ul class="ws-modal-list" data-brunch-items></ul>
+    <p style="font-size:0.82rem;color:var(--muted);margin-bottom:0;" data-brunch-footnote></p>
   </div>
+</div>
 
-  <!-- 2. YOUR GUIDES -->
-  <div class="ws-section ws-section-alt">
-    <div class="s-tag" style="justify-content:center;">Your guides</div>
-    <h2 style="text-align:center;margin-bottom:0.5rem;">Two practices,<br><em>two approaches, one intention.</em></h2>
-    <p style="text-align:center;font-size:0.9rem;color:var(--mid);font-weight:300;max-width:520px;margin:0 auto 2.5rem;line-height:1.75;">
-      Each workshop is led by a pair of specialists who complement each other.
-      Together they connect body, breath and the nervous system.
-    </p>
-
-    <div class="ws-guides-grid">
-      <div class="ws-guide-card">
-        <img src="/assets/images/lucie-new.jpeg" alt="Lucie Linková" class="ws-guide-photo">
-        <div class="ws-guide-body">
-          <div class="ws-guide-specialty">Hypopressive method</div>
-          <h3>Lucie Linková</h3>
-          <p>
-            Conscious work with intra-abdominal pressure, the diaphragm and the pelvic floor.
-            Lucie guides you through a technique that activates the deep stabilising system
-            — without force, without overload. The body learns to function more efficiently
-            through breath and posture.
-          </p>
-          <div class="ws-guide-social">
-            <a href="https://instagram.com/bodyease_hypopressive" target="_blank">@bodyease_hypopressive</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="ws-guide-card">
-        <img src="/assets/images/katka.jpeg" alt="Katka" class="ws-guide-photo">
-        <div class="ws-guide-body">
-          <div class="ws-guide-specialty">Pranayama · conscious breath</div>
-          <h3>Katka</h3>
-          <p>
-            Pranayama is an ancient yogic practice of conscious breathwork — a direct gateway
-            to the nervous system. Through extended exhale, breath retention and alternate
-            nostril breathing, Katka calms the mind, regulates stress and deepens body awareness.
-          </p>
-          <div class="ws-guide-social">
-            <a href="https://instagram.com/breathart_katerina" target="_blank">@breathart_katerina</a>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="ws-modal-overlay" id="wsInfoModal" role="dialog" aria-modal="true">
+  <div class="ws-modal">
+    <button type="button" class="ws-modal-close" data-close aria-label="Close">×</button>
+    <span class="ws-modal-icon" data-modal-icon></span>
+    <h3 data-modal-title></h3>
+    <p data-modal-body></p>
   </div>
-
-  <!-- 3. UPCOMING WORKSHOPS -->
-  <div class="ws-section" id="ws-events">
-    <div class="s-tag">Upcoming workshops · 2026</div>
-    <h2>Choose your <em>date.</em></h2>
-    <p style="font-size:0.9rem;color:var(--mid);font-weight:300;max-width:540px;margin-bottom:2.5rem;line-height:1.75;">
-      Three workshops, three different spaces — each with the same combination: hypopressive method with Lucie + pranayama with Katka.
-    </p>
-
-    <div class="ws-events-list">
-
-      <div class="ws-event">
-        <div class="ws-event-date">
-          <div class="ev-month">April</div>
-          <div class="ev-day">26</div>
-        </div>
-        <div class="ws-event-info">
-          <h4>Breath &amp; Pelvic Floor</h4>
-          <div class="ws-event-meta">
-            <span>Lucie + Katka</span>
-            <span>9:15 – 11:15</span>
-            <span>Yoga studio · Vršovice</span>
-            <span>Max 10 people</span>
-          </div>
-          <div class="ws-event-tags">
-            <span class="ws-event-tag">Hypopressive</span>
-            <span class="ws-event-tag">Pranayama</span>
-            <span class="ws-event-tag">2h</span>
-          </div>
-        </div>
-        <div class="ws-event-actions">
-          <div class="ws-event-price">1 500 CZK <span class="ws-info-tip">i<span class="ws-tooltip">Includes brunch at Koncept 0</span></span></div>
-          <a href="https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform" target="_blank" class="btn-event">Register →</a>
-        </div>
-      </div>
-
-      <div class="ws-event">
-        <div class="ws-event-date">
-          <div class="ev-month">June</div>
-          <div class="ev-day">13</div>
-        </div>
-        <div class="ws-event-info">
-          <h4>Breath &amp; Pelvic Floor</h4>
-          <div class="ws-event-meta">
-            <span>Lucie + Katka</span>
-            <span>9:15 – 11:15</span>
-            <span>Grébovka · outdoors</span>
-            <span>Max 20 people</span>
-          </div>
-          <div class="ws-event-tags">
-            <span class="ws-event-tag">Hypopressive</span>
-            <span class="ws-event-tag">Pranayama</span>
-            <span class="ws-event-tag">Outdoor</span>
-          </div>
-        </div>
-        <div class="ws-event-actions">
-          <div class="ws-event-price">1 500 CZK <span class="ws-info-tip">i<span class="ws-tooltip">No brunch · bring your own mat</span></span></div>
-          <a href="https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform" target="_blank" class="btn-event">Register →</a>
-        </div>
-      </div>
-
-      <div class="ws-event">
-        <div class="ws-event-date">
-          <div class="ev-month">Sept</div>
-          <div class="ev-day">19</div>
-        </div>
-        <div class="ws-event-info">
-          <h4>Breath &amp; Pelvic Floor</h4>
-          <div class="ws-event-meta">
-            <span>Lucie + Katka</span>
-            <span>9:30 – 11:00</span>
-            <span>Salt Cave · Prague</span>
-            <span>Max 7 people</span>
-          </div>
-          <div class="ws-event-tags">
-            <span class="ws-event-tag">Hypopressive</span>
-            <span class="ws-event-tag">Pranayama</span>
-            <span class="ws-event-tag">Salt cave</span>
-          </div>
-        </div>
-        <div class="ws-event-actions">
-          <div class="ws-event-price">1 500 CZK <span class="ws-info-tip">i<span class="ws-tooltip">No brunch · salt cave</span></span></div>
-          <a href="https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform" target="_blank" class="btn-event">Register →</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- PRACTICAL INFO -->
-  <div class="ws-section ws-section-dark">
-    <div class="s-tag" style="color:var(--terra-light);border-color:rgba(184,98,58,0.3);">Practical information</div>
-    <h2 style="text-align:center;margin-bottom:0.5rem;">What's <em>included</em></h2>
-    <p style="text-align:center;font-size:0.87rem;color:rgba(253,250,246,0.45);font-weight:300;margin-bottom:0;">
-      Everything you need to know before booking.
-    </p>
-    <div class="ws-info-grid">
-      <div class="ws-price-block">
-        <div class="ws-price-num">1 500 CZK</div>
-        <div class="ws-price-desc">per workshop</div>
-        <div style="margin-top:1.25rem;font-size:0.78rem;color:rgba(253,250,246,0.5);font-weight:300;line-height:1.6;">
-          Payment after place confirmed.<br>
-          Gift vouchers available.
-        </div>
-      </div>
-      <div class="ws-info-block">
-        <h4>What's included</h4>
-        <ul>
-          <li>2 hours of workshop</li>
-          <li>1h hypopressive method with Lucie</li>
-          <li>1h pranayama with Katka</li>
-          <li>Equipment provided in the studio</li>
-        </ul>
-      </div>
-      <div class="ws-info-block">
-        <h4>What to bring</h4>
-        <ul>
-          <li>Comfortable clothes</li>
-          <li>At Grébovka: bring your own mat</li>
-          <li>Don't eat 2 hours before</li>
-          <li>Cancellation: 48h notice required</li>
-          <li>Questions: lucielinkova@bodyease.cz</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. PAST EVENTS -->
-  <div class="ws-section ws-section-alt">
-    <div class="s-tag" style="justify-content:center;">Past events</div>
-    <h2 style="text-align:center;">What we've <em>experienced</em></h2>
-    <div class="ws-archive-empty">
-      <p>Workshops are just getting started — the first one takes place on 26 April 2026.<br>After each gathering, a recap and photos will appear here.</p>
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="ws-section" style="text-align:center;">
-    <div class="s-tag" style="justify-content:center;">Any questions?</div>
-    <h2>Lucie will <em>answer personally.</em></h2>
-    <p style="font-size:0.93rem;color:var(--mid);font-weight:300;max-width:400px;margin:0 auto 2rem;line-height:1.75;">
-      Write or call — she's happy to help.
-    </p>
-    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-      <a href="tel:+420792314472" class="btn-main">+420 792 314 472</a>
-      <a href="mailto:lucielinkova@bodyease.cz" class="btn-ghost" style="font-size:0.9rem;">lucielinkova@bodyease.cz</a>
-    </div>
-  </div>
-
 </div>
 
 <footer>
   <div class="footer-main">
     <div>
       <a href="/en/index.html" class="footer-logo">Lucie Linková<span>Hypopressive method</span></a>
-      <p class="footer-desc">Hypopressive method and conscious movement for stability, lightness and a healthy body core. Prague 3.</p>
+      <p class="footer-desc">Hypopressive method and conscious movement for stability, lightness and a healthy core. Prague 3.</p>
     </div>
     <div class="footer-col">
       <h5>Navigation</h5>
@@ -366,7 +74,7 @@
         <li><a href="/en/workshop.html">Workshops</a></li>
         <li><a href="/en/kurz.html">Courses</a></li>
         <li><a href="/en/blog.html">Blog</a></li>
-        <li><a href="/en/lekce.html">Book a class</a></li>
+        <li><a href="/en/lekce.html">Book a session</a></li>
       </ul>
     </div>
     <div class="footer-col footer-contact">
@@ -380,6 +88,7 @@
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/workshop-page.js"></script>
 </body>
 </html>

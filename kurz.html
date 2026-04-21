@@ -332,39 +332,72 @@
     }
 
     .register-block {
-      background: var(--terra);
       border-radius: 2px;
       padding: 2.8rem 2.2rem;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .register-block .qr-label {
-      color: rgba(255,255,255,0.7);
+    /* Featured (full course) — prominent terra card */
+    .register-block--featured {
+      background: var(--terra);
+      color: white;
+      border: 2px solid var(--terra);
     }
+
+    /* Drop-in — lighter, secondary */
+    .register-block--dropin {
+      background: var(--warm);
+      color: var(--dark);
+      border: 1px solid rgba(184,98,58,0.2);
+    }
+
+    .register-type {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .register-block--featured .register-type { color: rgba(255,255,255,0.75); }
+    .register-block--dropin .register-type { color: var(--terra); }
 
     .register-price {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 500;
-      color: white;
       line-height: 1;
       margin-bottom: 0.4rem;
     }
 
+    .register-block--featured .register-price { color: white; }
+    .register-block--dropin .register-price { color: var(--dark); }
+
+    .register-price-old {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      text-decoration: line-through;
+      margin-bottom: 0.25rem;
+      line-height: 1;
+    }
+
     .register-price-desc {
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.65);
       font-weight: 300;
       margin-bottom: 2rem;
     }
 
+    .register-block--featured .register-price-desc { color: rgba(255,255,255,0.7); }
+    .register-block--dropin .register-price-desc { color: var(--mid); }
+
     .register-block .btn-register {
       display: inline-block;
-      background: white;
-      color: var(--terra);
       padding: 0.9rem 2rem;
       font-size: 0.8rem;
       font-weight: 500;
@@ -375,18 +408,41 @@
       transition: all 0.3s;
     }
 
-    .register-block .btn-register:hover {
-      background: var(--dark);
-      color: white;
-      transform: translateY(-2px);
-    }
+    .register-block--featured .btn-register { background: white; color: var(--terra); }
+    .register-block--featured .btn-register:hover { background: var(--dark); color: white; transform: translateY(-2px); }
+
+    .register-block--dropin .btn-register { background: var(--terra); color: white; }
+    .register-block--dropin .btn-register:hover { background: var(--dark); transform: translateY(-2px); }
 
     .register-block .btn-note {
       margin-top: 1rem;
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.5);
       font-weight: 300;
     }
+
+    .register-block--featured .btn-note { color: rgba(255,255,255,0.5); }
+    .register-block--dropin .btn-note { color: var(--muted); }
+
+    /* Corner ribbon on the featured card */
+    .register-ribbon {
+      position: absolute;
+      top: 20px;
+      right: -48px;
+      transform: rotate(45deg);
+      background: var(--warm);
+      color: var(--terra);
+      padding: 0.4rem 3.5rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      white-space: nowrap;
+      z-index: 2;
+    }
+
+    /* QR block spans full width under pricing cards */
+    .qr-payment-block { grid-column: 1 / -1; }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 960px) {
@@ -659,20 +715,33 @@
   <div class="kurz-section" id="registrace">
     <div class="s-tag" style="justify-content:center;">Registrace a platba</div>
     <h2 style="text-align:center;">Jak se <em>přihlásit</em></h2>
-    <p style="text-align:center;font-size:0.93rem;color:var(--mid);font-weight:300;max-width:480px;margin:0 auto 2.5rem;line-height:1.75;">
-      Vyplňte přihlašovací formulář a uhraďte kurz převodem. Přihlášení je závazné po přijetí platby.
+    <p style="text-align:center;font-size:0.93rem;color:var(--mid);font-weight:300;max-width:540px;margin:0 auto 2.5rem;line-height:1.75;">
+      Vyber si, co ti sedí víc — jednorázovou lekci nebo celý kurz se slevou.
     </p>
     <div class="payment-register-grid">
 
-      <div class="register-block">
+      <!-- Drop-in (jednorázová lekce) -->
+      <div class="register-block register-block--dropin">
+        <div class="register-type">Jednorázově</div>
+        <div class="register-price">500 Kč</div>
+        <div class="register-price-desc">za 1 lekci · 55 minut</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3Os_RV5TBV-sCPVqWRVsadH0LUorm6JjNQcjfVml71RejhA/viewform" target="_blank" rel="noopener" class="btn-register">Přihlásit na lekci →</a>
+        <span class="btn-note">Ideální, když chceš metodu nejdřív vyzkoušet.</span>
+      </div>
+
+      <!-- Celý kurz (featured s ribbonem) -->
+      <div class="register-block register-block--featured">
+        <span class="register-ribbon">Ušetříš 1 000 Kč</span>
+        <div class="register-type">Celý kurz</div>
+        <div class="register-price-old">5 000 Kč</div>
         <div class="register-price">4 000 Kč</div>
-        <div class="register-price-desc">za celý kurz · 10 lekcí · 55 minut každá</div>
+        <div class="register-price-desc">10 lekcí · 55 minut každá</div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3Os_RV5TBV-sCPVqWRVsadH0LUorm6JjNQcjfVml71RejhA/viewform" target="_blank" rel="noopener" class="btn-register">Vyplnit přihlášku →</a>
         <span class="btn-note">Po odeslání formuláře vás Lucie kontaktuje s platebními údaji.</span>
       </div>
 
       <div class="qr-payment-block">
-        <div class="qr-label">Platba převodem · QR kód</div>
+        <div class="qr-label">Platba za celý kurz · QR kód</div>
         <div class="qr-placeholder">
             <img src="/assets/qr-platba.jpg" alt="QR platba 4000 Kč">
         </div>
@@ -680,6 +749,7 @@
           <p>Naskenujte QR kódem ve své bankovní aplikaci.</p>
           <p>Částka <strong>4 000 Kč</strong> se doplní automaticky.</p>
           <p style="margin-top:0.6rem;font-size:0.78rem;">Nebo převodem: <strong>212121381/5500</strong><br>Zpráva pro příjemce: vaše celé jméno</p>
+          <p style="margin-top:0.75rem;font-size:0.74rem;color:var(--muted);">Pro jednorázovou lekci (500 Kč) vám platební údaje pošleme po přihlášení.</p>
         </div>
       </div>
 
