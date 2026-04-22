@@ -134,7 +134,7 @@
           "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
         },
         {
-          "iso": "2026-06-13",
+          "iso": "2026-06-27",
           "monthLabel": "Červen",
           "time": "9:15 – 11:15",
           "location": "Grébovka · venku",
@@ -150,11 +150,11 @@
           }
         },
         {
-          "iso": "2026-09-19",
+          "iso": "2026-09-26",
           "monthLabel": "Září",
           "time": "9:30 – 11:00",
           "location": "Solná jeskyně · Praha",
-          "capacity": 7,
+          "capacity": 9,
           "extras": ["Solná jeskyně"],
           "price": 1500,
           "brunch": false,
@@ -162,7 +162,7 @@
           "locationInfo": {
             "icon": "✦",
             "titleHtml": "Síla <em>solné jeskyně</em>",
-            "body": "Solná jeskyně přirozeně podporuje dýchací cesty, zklidňuje organismus a pomáhá uvolnit napětí. Mikroklima s obsahem minerálů může přispět ke zlepšení imunity, kvalitnějšímu dýchání a celkovému zklidnění.",
+            "body": "Solná jeskyně přirozeně podporuje dýchací cesty a pomáhá uvolnit napětí. Mikroklima s obsahem minerálů přispívá k úlevě při alergiích, astmatu a ekzémech, posiluje imunitu, prohlubuje dýchání a celkově zklidňuje nervovou soustavu.",
             "badgeLabel": "✦ Proč solná jeskyně"
           }
         }

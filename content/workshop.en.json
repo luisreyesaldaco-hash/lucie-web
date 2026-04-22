@@ -134,7 +134,7 @@
           "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
         },
         {
-          "iso": "2026-06-13",
+          "iso": "2026-06-27",
           "monthLabel": "June",
           "time": "9:15 – 11:15",
           "location": "Grébovka park · outdoor",
@@ -150,11 +150,11 @@
           }
         },
         {
-          "iso": "2026-09-19",
+          "iso": "2026-09-26",
           "monthLabel": "September",
           "time": "9:30 – 11:00",
           "location": "Salt cave · Prague",
-          "capacity": 7,
+          "capacity": 9,
           "extras": ["Salt cave"],
           "price": 1500,
           "brunch": false,
@@ -162,7 +162,7 @@
           "locationInfo": {
             "icon": "✦",
             "titleHtml": "The power of the <em>salt cave</em>",
-            "body": "The salt cave naturally supports the respiratory system, calms the body, and helps release tension. The mineral-rich microclimate can strengthen immunity, improve breathing, and bring overall calm.",
+            "body": "The salt cave naturally supports the respiratory system and helps release tension. The mineral-rich microclimate offers relief for allergies, asthma, and eczema, strengthens immunity, deepens breathing, and brings deep nervous-system calm.",
             "badgeLabel": "✦ Why the salt cave"
           }
         }
