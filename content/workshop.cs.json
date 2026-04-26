@@ -70,7 +70,7 @@
   "archive": {
     "tag": "Proběhlo",
     "titleHtml": "Co už jsme <em>zažili</em>",
-    "emptyHtml": "Workshopy teprve začínají — první proběhne 26. dubna 2026.<br>Po každém setkání zde přibude záznam a fotografie."
+    "emptyHtml": "Workshopy teprve začínají — první proběhne 7. listopadu 2026.<br>Po každém setkání zde přibude záznam a fotografie."
   },
   "contact": {
     "tag": "Máte otázku?",
@@ -123,8 +123,8 @@
       ],
       "dates": [
         {
-          "iso": "2026-04-26",
-          "monthLabel": "Duben",
+          "iso": "2026-11-07",
+          "monthLabel": "Listopad",
           "time": "9:15 – 11:15",
           "location": "Studio jógy · Vršovice",
           "capacity": 10,
