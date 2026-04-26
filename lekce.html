@@ -397,6 +397,97 @@
       line-height: 1.6;
     }
 
+
+    /* --- PRICE TIERS --- */
+    .price-tiers {
+      list-style: none;
+      border: 1px solid rgba(184,98,58,0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .price-tier {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid rgba(184,98,58,0.08);
+    }
+    .price-tier:last-child { border-bottom: none; }
+    .price-tier span { color: var(--mid); }
+    .price-tier em {
+      font-style: normal;
+      font-size: 0.75rem;
+      background: #6a8f6a;
+      color: white;
+      padding: 1px 7px;
+      border-radius: 10px;
+      margin-left: 0.4rem;
+    }
+    .price-tier strong { color: var(--terra); font-weight: 500; }
+
+    /* --- INCLUDES SECTION --- */
+    .includes-section {
+      background: white;
+      padding: 4rem 2rem 3rem;
+    }
+    .includes-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .includes-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .includes-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--dark);
+    }
+    .includes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .include-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem;
+      background: var(--cream);
+      border-radius: 12px;
+    }
+    .include-num {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--terra);
+      background: var(--terra-pale);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: 0.03em;
+    }
+    .include-item strong {
+      display: block;
+      font-size: 0.94rem;
+      color: var(--dark);
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+    .include-item p {
+      font-size: 0.86rem;
+      color: var(--mid);
+      line-height: 1.5;
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .includes-grid { grid-template-columns: 1fr; }
+    }
     /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
       .compare-section {
@@ -470,17 +561,76 @@
       <div class="compare-badge">Nejoblíbenější</div>
       <div class="compare-icon">✨</div>
       <h2>Individuální lekce</h2>
-      <div class="compare-price">od 900 Kč <span>/ 60 min · jen pro vás</span></div>
+      <div class="compare-price">1 200 Kč <span>/ 60 min · jen pro vás</span></div>
+      <ul class="price-tiers">
+        <li class="price-tier"><span>Jednorázová lekce</span><strong>1 200 Kč</strong></li>
+        <li class="price-tier"><span>Balíček 4 lekcí <em>−10 %</em></span><strong>4 320 Kč</strong></li>
+        <li class="price-tier"><span>Balíček 8 lekcí <em>−15 %</em></span><strong>8 160 Kč</strong></li>
+      </ul>
       <ul class="compare-pros">
         <li>Přizpůsobeno přesně vašim potřebám</li>
         <li>Maximální pozornost a korekce techniky</li>
         <li>Nejrychlejší cesta k výsledkům</li>
-        <li>Praha 3 nebo online video konzultace</li>
+        <li>MotherGood studio – plné vybavení, bez příplatků</li>
       </ul>
       <ul class="compare-cons">
         <li>Vyšší cena oproti skupině</li>
       </ul>
       <button class="compare-choose" onclick="zvolit('individualni')">Chci individuální lekci →</button>
+    </div>
+  </div>
+
+  <!-- CO ZAHRNUJE -->
+  <div class="includes-section">
+    <div class="includes-inner">
+      <div class="includes-header">
+        <div class="s-tag" style="justify-content:center;margin-bottom:0.75rem">Individuální lekce zahrnuje</div>
+        <h2>Co na vás čeká <em>krok za krokem</em></h2>
+      </div>
+      <div class="includes-grid">
+        <div class="include-item">
+          <div class="include-num">01</div>
+          <div>
+            <strong>Vstupní konzultace a dotazník</strong>
+            <p>Zhodnocení aktuálního stavu, potíží a cílů</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-num">02</div>
+          <div>
+            <strong>Diagnostika břišní stěny a držení těla</strong>
+            <p>Kontrola aktivace hlubokého stabilizačního systému – zaměření na diastázu, pánevní dno a dechový vzor</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-num">03</div>
+          <div>
+            <strong>Nácvik dechu a aktivace středu těla</strong>
+            <p>Práce s bránicí a nitrobřišním tlakem</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-num">04</div>
+          <div>
+            <strong>Mobilizační a přípravná cvičení</strong>
+            <p>Uvolnění hrudníku, páteře a kyčlí pro lepší efekt cvičení</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-num">05</div>
+          <div>
+            <strong>Hypopresivní cvičení – praktická část</strong>
+            <p>Přesné nastavení pozic, individuální korekce techniky a postupné navýšení náročnosti</p>
+          </div>
+        </div>
+        <div class="include-item">
+          <div class="include-num">06</div>
+          <div>
+            <strong>Doporučení na míru</strong>
+            <p>Co a jak cvičit doma a na co si dát pozor v běžném dni</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
