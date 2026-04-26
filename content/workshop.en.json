@@ -70,7 +70,7 @@
   "archive": {
     "tag": "Past workshops",
     "titleHtml": "What we've <em>lived</em>",
-    "emptyHtml": "Workshops are just beginning — the first takes place April 26, 2026.<br>After each gathering, recaps and photos will appear here."
+    "emptyHtml": "Workshops are just beginning — the first takes place November 7, 2026.<br>After each gathering, recaps and photos will appear here."
   },
   "contact": {
     "tag": "Have a question?",
@@ -123,8 +123,8 @@
       ],
       "dates": [
         {
-          "iso": "2026-04-26",
-          "monthLabel": "April",
+          "iso": "2026-11-07",
+          "monthLabel": "November",
           "time": "9:15 – 11:15",
           "location": "Yoga studio · Vršovice",
           "capacity": 10,
