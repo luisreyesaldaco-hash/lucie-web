@@ -4,9 +4,18 @@
     "titleHtml": "Experience the method<br><em>differently.</em>",
     "sub": "A workshop isn't just another class. It's an intentional gathering where Lucie combines the hypopressive method with other approaches — for deeper experience, new perspectives, and a different kind of practice.",
     "pills": [
-      { "strong": "Multiple methodologies", "text": "not just hypopressive" },
-      { "strong": "Limited capacity", "text": "max 7–20 people" },
-      { "strong": "Varied settings", "text": "studio, outdoors, therapeutic" }
+      {
+        "strong": "Multiple methodologies",
+        "text": "not just hypopressive"
+      },
+      {
+        "strong": "Limited capacity",
+        "text": "max 7–20 people"
+      },
+      {
+        "strong": "Varied settings",
+        "text": "studio, outdoors, therapeutic"
+      }
     ],
     "ctaText": "Upcoming dates →",
     "ctaHref": "#ws-events"
@@ -61,9 +70,22 @@
     "title": "Cancellation policy",
     "intro": "Life sometimes gets in the way — we get it. To keep the workshop a quality experience for the whole group, we stick to a few simple rules.",
     "tiers": [
-      { "pct": "100 %", "label": "refund", "when": "more than 14 days before" },
-      { "pct": "50 %", "label": "refund", "when": "48 h to 14 days before" },
-      { "pct": "0 %", "label": "no refund", "when": "less than 48 hours", "isZero": true }
+      {
+        "pct": "100 %",
+        "label": "refund",
+        "when": "more than 14 days before"
+      },
+      {
+        "pct": "50 %",
+        "label": "refund",
+        "when": "48 h to 14 days before"
+      },
+      {
+        "pct": "0 %",
+        "label": "no refund",
+        "when": "less than 48 hours",
+        "isZero": true
+      }
     ],
     "note": "You can always send someone in your place. If we cancel the workshop from our side (e.g., low attendance), we'll offer an alternative date or a full refund."
   },
@@ -102,7 +124,10 @@
       "label": "Project 01",
       "title": "Breath & pelvic floor",
       "subtitle": "Hypopressive method + conscious breath",
-      "tags": ["Hypopressive", "Pranayama"],
+      "tags": [
+        "Hypopressive",
+        "Pranayama"
+      ],
       "guides": [
         {
           "name": "Lucie Linková",
@@ -123,23 +148,14 @@
       ],
       "dates": [
         {
-          "iso": "2026-11-07",
-          "monthLabel": "November",
-          "time": "9:15 – 11:15",
-          "location": "Yoga studio · Vršovice",
-          "capacity": 10,
-          "extras": [],
-          "price": 1500,
-          "brunch": true,
-          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
-        },
-        {
           "iso": "2026-06-27",
           "monthLabel": "June",
           "time": "9:15 – 11:15",
           "location": "Grébovka park · outdoor",
           "capacity": 20,
-          "extras": ["Outdoor"],
+          "extras": [
+            "Outdoor"
+          ],
           "price": 1500,
           "brunch": true,
           "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
@@ -155,7 +171,9 @@
           "time": "9:30 – 11:00",
           "location": "Salt cave · Prague",
           "capacity": 9,
-          "extras": ["Salt cave"],
+          "extras": [
+            "Salt cave"
+          ],
           "price": 1500,
           "brunch": false,
           "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
@@ -165,6 +183,17 @@
             "body": "The salt cave naturally supports the respiratory system and helps release tension. The mineral-rich microclimate offers relief for allergies, asthma, and eczema, strengthens immunity, deepens breathing, and brings deep nervous-system calm.",
             "badgeLabel": "✦ Why the salt cave"
           }
+        },
+        {
+          "iso": "2026-11-07",
+          "monthLabel": "November",
+          "time": "9:15 – 11:15",
+          "location": "Yoga studio · Vršovice",
+          "capacity": 10,
+          "extras": [],
+          "price": 1500,
+          "brunch": true,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
         }
       ]
     }
