@@ -4,9 +4,18 @@
     "titleHtml": "Zažijte metodu<br><em>jinak.</em>",
     "sub": "Workshop není lekce navíc. Je to záměrné setkání, kde Lucie kombinuje hypopresivní metodu s dalšími přístupy — pro hlubší zážitek, nové perspektivy a jiný druh praxe.",
     "pills": [
-      { "strong": "Různé metodologie", "text": "nejen hypopresivní" },
-      { "strong": "Limitovaná kapacita", "text": "max 7–20 osob" },
-      { "strong": "Různá prostředí", "text": "studio, příroda, terapie" }
+      {
+        "strong": "Různé metodologie",
+        "text": "nejen hypopresivní"
+      },
+      {
+        "strong": "Limitovaná kapacita",
+        "text": "max 7–20 osob"
+      },
+      {
+        "strong": "Různá prostředí",
+        "text": "studio, příroda, terapie"
+      }
     ],
     "ctaText": "Aktuální termíny →",
     "ctaHref": "#ws-events"
@@ -61,9 +70,22 @@
     "title": "Storno podmínky",
     "intro": "Život se občas zamotá — chápeme to. Abychom udrželi workshop kvalitním zážitkem pro celou skupinu, držíme se jednoduchých pravidel.",
     "tiers": [
-      { "pct": "100 %", "label": "vrátíme", "when": "více než 14 dní předem" },
-      { "pct": "50 %", "label": "vrátíme", "when": "48 h až 14 dní předem" },
-      { "pct": "0 %", "label": "nevracíme", "when": "méně než 48 hodin", "isZero": true }
+      {
+        "pct": "100 %",
+        "label": "vrátíme",
+        "when": "více než 14 dní předem"
+      },
+      {
+        "pct": "50 %",
+        "label": "vrátíme",
+        "when": "48 h až 14 dní předem"
+      },
+      {
+        "pct": "0 %",
+        "label": "nevracíme",
+        "when": "méně než 48 hodin",
+        "isZero": true
+      }
     ],
     "note": "Za sebe můžeš kdykoliv poslat náhradníka. Pokud bychom workshop rušili z naší strany (např. nízký počet účastníků), nabídneme náhradní termín nebo vrátíme plnou částku."
   },
@@ -102,7 +124,10 @@
       "label": "Projekt 01",
       "title": "Dech a pánevní dno",
       "subtitle": "Hypopresivní metoda + vědomý dech",
-      "tags": ["Hypopresivní", "Pranajáma"],
+      "tags": [
+        "Hypopresivní",
+        "Pranajáma"
+      ],
       "guides": [
         {
           "name": "Lucie Linková",
@@ -123,23 +148,14 @@
       ],
       "dates": [
         {
-          "iso": "2026-11-07",
-          "monthLabel": "Listopad",
-          "time": "9:15 – 11:15",
-          "location": "Studio jógy · Vršovice",
-          "capacity": 10,
-          "extras": [],
-          "price": 1500,
-          "brunch": true,
-          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
-        },
-        {
           "iso": "2026-06-27",
           "monthLabel": "Červen",
           "time": "9:15 – 11:15",
           "location": "Grébovka · venku",
           "capacity": 20,
-          "extras": ["Outdoor"],
+          "extras": [
+            "Outdoor"
+          ],
           "price": 1500,
           "brunch": true,
           "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
@@ -155,7 +171,9 @@
           "time": "9:30 – 11:00",
           "location": "Solná jeskyně · Praha",
           "capacity": 9,
-          "extras": ["Solná jeskyně"],
+          "extras": [
+            "Solná jeskyně"
+          ],
           "price": 1500,
           "brunch": false,
           "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform",
@@ -165,6 +183,17 @@
             "body": "Solná jeskyně přirozeně podporuje dýchací cesty a pomáhá uvolnit napětí. Mikroklima s obsahem minerálů přispívá k úlevě při alergiích, astmatu a ekzémech, posiluje imunitu, prohlubuje dýchání a celkově zklidňuje nervovou soustavu.",
             "badgeLabel": "✦ Proč solná jeskyně"
           }
+        },
+        {
+          "iso": "2026-11-07",
+          "monthLabel": "Listopad",
+          "time": "9:15 – 11:15",
+          "location": "Studio jógy · Vršovice",
+          "capacity": 10,
+          "extras": [],
+          "price": 1500,
+          "brunch": true,
+          "bookingUrl": "https://docs.google.com/forms/d/1cal5NTOLQ7MFXRznwiBadaxSZd5c7jeMXGnpkfDI_wY/viewform"
         }
       ]
     }
