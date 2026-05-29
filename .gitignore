@@ -1,3 +1,6 @@
 .vercel
 .claude/
 email.pdf
+
+# Borradores locales — NUNCA se suben a GitHub ni se publican en Vercel
+drafts/

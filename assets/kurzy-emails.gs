@@ -110,7 +110,7 @@ function onWorkshopFormDirect(e) {
     GmailApp.sendEmail(LUCIE_EMAIL,
       '⚠️ Workshop form submission bez kompletních údajů',
       'Form odeslán, ale chybí povinná pole.\n\nPřijaté hodnoty:\n' + JSON.stringify(answers, null, 2),
-      { name: 'Systém – bodyease.cz' });
+      { name: 'Systém – bodyease.cz', from: LUCIE_EMAIL });
     return;
   }
 
@@ -119,12 +119,12 @@ function onWorkshopFormDirect(e) {
       '⚠️ Workshop plný: ' + name + ' – ' + date,
       'Alguien intentó inscribirse al workshop "' + date + '" pero ya está completo.\n\n' +
       'Nombre: ' + name + '\nEmail: ' + email + '\nTeléfono: ' + phone,
-      { name: 'Systém – bodyease.cz' });
+      { name: 'Systém – bodyease.cz', from: LUCIE_EMAIL });
     GmailApp.sendEmail(email,
       'Workshop Lucie Linková – místo není k dispozici',
       'Dobrý den ' + name + ',\n\nomlouváme se, ale termín "' + date + '" je již plně obsazen.\n\n' +
       'V případě uvolnění místa vás budeme kontaktovat.\n\nLucie Linková · bodyease.cz',
-      { name: LUCIE_NAME, replyTo: LUCIE_EMAIL });
+      { name: LUCIE_NAME, replyTo: LUCIE_EMAIL, from: LUCIE_EMAIL });
     return;
   }
 
@@ -151,14 +151,14 @@ function onWorkshopFormSubmit(e) {
       '⚠️ Workshop plný: ' + name + ' – ' + date,
       'Alguien intentó inscribirse al workshop "' + date + '" pero ya está completo.\n\n' +
       'Nombre: ' + name + '\nEmail: ' + email + '\nTeléfono: ' + phone,
-      { name: 'Systém – bodyease.cz' }
+      { name: 'Systém – bodyease.cz', from: LUCIE_EMAIL }
     );
     // Enviar aviso al participante
     GmailApp.sendEmail(email,
       'Workshop Lucie Linková – místo není k dispozici',
       'Dobrý den ' + name + ',\n\nomlouváme se, ale termín "' + date + '" je již plně obsazen.\n\n' +
       'V případě uvolnění místa vás budeme kontaktovat.\n\nLucie Linková · bodyease.cz',
-      { name: LUCIE_NAME, replyTo: LUCIE_EMAIL }
+      { name: LUCIE_NAME, replyTo: LUCIE_EMAIL, from: LUCIE_EMAIL }
     );
     return;
   }
@@ -191,7 +191,7 @@ function checkAndUpdateFormOptions() {
     form.setDescription('Kurz je plně obsazen. Děkujeme za váš zájem!');
     GmailApp.sendEmail(LUCIE_EMAIL, '🎉 Kurz je plně obsazen!',
       'Všechna místa ve všech termínech jsou obsazena. Formulář byl automaticky uzavřen.',
-      { name: 'Systém – bodyease.cz' });
+      { name: 'Systém – bodyease.cz', from: LUCIE_EMAIL });
     return;
   }
 
@@ -371,7 +371,7 @@ function sendConfirmationEmail(name, email, slot) {
 </body>
 </html>`;
 
-  GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL });
+  GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL, from: LUCIE_EMAIL });
 }
 
 
@@ -458,7 +458,7 @@ function sendReminderEmail(name, email, slot, dateStr) {
 </body>
 </html>`;
 
-  GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL });
+  GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL, from: LUCIE_EMAIL });
 }
 
 
@@ -546,7 +546,7 @@ function sendWorkshopConfirmationEmail(name, email, date) {
 </body>
 </html>`;
 
-  GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL });
+  GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL, from: LUCIE_EMAIL });
 }
 
 
@@ -622,7 +622,7 @@ function sendWorkshopReminderEmails() {
 </table>
 </body>
 </html>`;
-      GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL });
+      GmailApp.sendEmail(email, subject, '', { htmlBody: html, name: LUCIE_NAME, replyTo: LUCIE_EMAIL, from: LUCIE_EMAIL });
     }
   }
 }
@@ -782,7 +782,7 @@ function notifyLucie(name, email, slot, experience, notes) {
     'Poznámka: ' + notes + '\n\n' +
     'Podívej se do Google Sheets pro přehled všech přihlášek.';
 
-  GmailApp.sendEmail(LUCIE_EMAIL, subject, body, { name: 'Systém – bodyease.cz' });
+  GmailApp.sendEmail(LUCIE_EMAIL, subject, body, { name: 'Systém – bodyease.cz', from: LUCIE_EMAIL });
 }
 
 
@@ -802,7 +802,7 @@ function notifyLucieWorkshop(name, email, phone, date, notes) {
     'Obsazenost: ' + info.current + ' / ' + info.max + ' míst\n\n' +
     'Podívej se do Google Sheets pro přehled všech přihlášek.';
 
-  GmailApp.sendEmail(LUCIE_EMAIL, subject, body, { name: 'Systém – bodyease.cz' });
+  GmailApp.sendEmail(LUCIE_EMAIL, subject, body, { name: 'Systém – bodyease.cz', from: LUCIE_EMAIL });
 }
 
 
