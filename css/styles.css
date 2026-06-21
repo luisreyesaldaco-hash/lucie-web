@@ -1526,3 +1526,64 @@ nav {
   .services-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: 2rem; }
 }
+
+/* APPROACH — 2 bloky (Lucie) */
+.approach {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.approach-block h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  margin: 0.7rem 0 1.3rem;
+}
+.approach-block h2 em { font-style: italic; color: var(--terra); }
+.approach-block p {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  color: var(--mid);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.approach-block strong { color: var(--dark); font-weight: 500; }
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 1.4rem 0 0;
+}
+.steps li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--mid);
+  font-weight: 300;
+}
+.steps li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--terra-pale);
+  color: var(--terra);
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps strong { color: var(--dark); font-weight: 500; }
+@media (max-width: 820px) {
+  .approach { grid-template-columns: 1fr; gap: 2.5rem; }
+}
